@@ -15,7 +15,7 @@ export const Profile: React.FC = () => {
             className="aspect-[3/4] overflow-hidden rounded-sm relative z-10"
           >
             <img
-              src="https://picsum.photos/600/800?random=profile"
+              src='/images/Profile.jpg'
               alt="Profile"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
@@ -43,7 +43,7 @@ export const Profile: React.FC = () => {
             className="font-sans text-stone-600 leading-loose space-y-6"
           >
             <p>
-              I am Akihiro, a multidisciplinary designer based in Kyoto. My work is deeply rooted in the philosophy of Wabi-Sabi—appreciating the beauty that is imperfect, impermanent, and incomplete.
+              I am MaBin, a multidisciplinary designer based in Beijing. My work is deeply rooted in the philosophy of Wabi-Sabi—appreciating the beauty that is imperfect, impermanent, and incomplete.
             </p>
             <p>
               In a digital world often obsessed with pixel-perfect sterility, I strive to introduce warmth, texture, and organic flow. I believe that good design should breathe, evolving with its content and its user.
@@ -58,7 +58,7 @@ export const Profile: React.FC = () => {
             <div>
               <h3 className="uppercase text-xs tracking-widest text-stone-400 mb-2 font-sans">Focus</h3>
               <ul>
-                <li>Art Direction</li>
+                <li>AI Design</li>
                 <li>UI/UX Design</li>
                 <li>Brand Identity</li>
               </ul>

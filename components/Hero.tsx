@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
           {...createFadeInUp(0.2)}
           className="font-sans text-stone-500 tracking-[0.2em] text-sm md:text-base mb-6 uppercase"
         >
-          Visual Designer &amp; Art Director
+          AI Designer &amp; Artist
         </motion.p>
 
         <div className="font-serif text-5xl md:text-7xl lg:text-9xl leading-tight text-stone-900 mb-12">

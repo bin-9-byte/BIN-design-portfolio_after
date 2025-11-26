@@ -28,7 +28,7 @@ export const Navigation: React.FC = () => {
         top: offsetPosition,
         behavior: "smooth"
       });
-      
+
       setIsOpen(false);
     }
   };
@@ -36,16 +36,15 @@ export const Navigation: React.FC = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-12 py-6 transition-all duration-500 ${
-          scrolled ? 'bg-wabi-paper/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-12 py-6 transition-all duration-500 ${scrolled ? 'bg-wabi-paper/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+          }`}
       >
-        <a 
-          href="#home" 
+        <a
+          href="#home"
           className="text-xl md:text-2xl font-serif font-medium tracking-wide z-50 cursor-pointer"
           onClick={(e) => handleNavClick(e, '#home')}
         >
-          Akihiro.<span className="text-stone-400">Design</span>
+          BIN'S.<span className="text-stone-400"> Portfolio</span>
         </a>
 
         {/* Desktop Menu */}
