@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import { Project } from '../types';
 import { motion } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
-import { FADE_IN, FADE_IN_UP, FADE_IN_UP_LARGE } from '../constants/animations';
+import { zIndex } from '../constants/zIndex';
+import { createFadeInUp } from '../constants/animations';
+
+const FADE_IN_UP = createFadeInUp();
+const FADE_IN_UP_LARGE = createFadeInUp(0.5, 50);
 
 interface ProjectDetailProps {
   project: Project;
@@ -18,30 +22,29 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
   }, []);
 
   return (
-    <motion.div
-      {...FADE_IN}
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
-      className="fixed inset-0 z-[60] bg-[#F5F2EB] overflow-y-auto"
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      className="fixed inset-0 bg-[#F5F2EB] overflow-y-auto"
+      style={{ zIndex: zIndex.PROJECT_DETAIL }}
     >
-      {/* Sticky Header inside Modal */}
-      <div className="sticky top-0 left-0 right-0 p-6 md:p-12 flex justify-between items-center bg-[#F5F2EB]/90 backdrop-blur-md z-10">
-        <button
-          onClick={onClose}
-          className="group flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors"
-        >
-          <div className="border border-stone-300 rounded-full p-2 group-hover:border-stone-900 transition-colors">
-            <X size={20} />
-          </div>
-          <span className="font-sans text-sm uppercase tracking-widest hidden md:inline">Close</span>
-        </button>
-        <span className="font-serif text-xl italic text-stone-400">{project.title}</span>
+      <div 
+        className="sticky top-0 left-0 right-0 p-6 md:p-12 flex justify-between items-center bg-[#F5F2EB]/90 backdrop-blur-md"
+        style={{ zIndex: zIndex.PROJECT_CARD_HOVER }}
+      >
+        <div className="flex-1">
+          <h2 className="text-2xl md:text-4xl font-serif font-medium text-stone-800">{project.title}</h2>
+        </div>
       </div>
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 pb-24">
         {/* Hero Image */}
         <motion.div
-          {...FADE_IN_UP}
+          variants={FADE_IN_UP}
+          initial="hidden"
+          animate="visible"
           transition={{ delay: 0.2 }}
           className="w-full aspect-video bg-stone-200 mb-16 overflow-hidden"
         >
@@ -88,7 +91,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
           {project.images.map((img, idx) => (
             <motion.div
               key={idx}
-              {...FADE_IN_UP_LARGE}
+              variants={FADE_IN_UP_LARGE}
+              initial="hidden"
+              animate="visible"
               transition={{ duration: 0.6 }}
               className="w-full"
             >

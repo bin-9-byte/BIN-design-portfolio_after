@@ -2,18 +2,18 @@ import React from 'react';
 import { Section } from './ui/Section';
 import { motion } from 'framer-motion';
 import { FADE_IN_SCALE, FADE_IN_OFFSET, FADE_IN_UP, FADE_IN, createTransition } from '../constants/animations';
+import { zIndex } from "../constants/zIndex";
 
 export const Profile: React.FC = () => {
   return (
-    <Section id="profile" className="bg-stone-50 min-h-[80vh] flex items-center">
+    <Section id="profile" className="bg-transparent min-h-[80vh] flex items-center">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
         {/* Image Area - Asymmetric placement */}
         <div className="md:col-span-5 relative">
           <motion.div
             {...FADE_IN_SCALE}
             transition={{ duration: 0.8 }}
-            className="aspect-[3/4] overflow-hidden rounded-sm relative z-10"
-          >
+            className="aspect-[3/4] overflow-hidden rounded-sm relative" style={{ zIndex: zIndex.BASE_CONTENT }}>
             <img
               src='/images/Profile.jpg'
               alt="Profile"
@@ -25,6 +25,7 @@ export const Profile: React.FC = () => {
             {...FADE_IN_OFFSET}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="absolute top-0 right-0 w-full h-full border border-stone-400 -z-0 translate-x-4 translate-y-4"
+            style={{ zIndex: zIndex.BACKGROUND_ELEMENTS }}
           />
         </div>
 

@@ -4,10 +4,8 @@ import { Project } from '../types';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { FADE_IN_RIGHT } from '../constants/animations';
+import { zIndex } from "../constants/zIndex";
 
-// ============================================================================
-// 性能优化：预先计算分类项目（避免每次渲染重复过滤）
-// ============================================================================
 const SPATIAL_PROJECTS = PROJECTS.filter(p =>
   ['Architecture', 'Interior Design', 'Landscape'].includes(p.category)
 );
@@ -20,17 +18,15 @@ const IDENTITY_PROJECTS = PROJECTS.filter(p =>
   p.category === 'Brand Identity'
 );
 
-// ============================================================================
-// 样式常量：消除超长 className 和 Magic Number
-// ============================================================================
-const SCROLL_BUTTON_BASE = "hidden md:flex absolute z-20 p-4 rounded-full shadow-sm transition-all duration-500 opacity-0 group-hover:opacity-100";
+const SCROLL_BUTTON_BASE = "hidden md:flex absolute z-20 p-2 rounded-full shadow-sm transition-all duration-500 opacity-0 group-hover:opacity-100";
 const SCROLL_BUTTON_THEME = "bg-wabi-paper/90 backdrop-blur-sm border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-white hover:border-stone-300";
 
-// 项目卡片高度为 600px * 3/4 = 450px，中心点在 225px
 const SCROLL_BUTTON_VERTICAL_POSITION = "top-[225px] -translate-y-1/2";
 
 interface ProjectsProps {
   onProjectClick: (project: Project) => void;
+  onHover: (text: string) => void;
+  onHoverBlock: (isHovering: boolean) => void;
 }
 
 interface ProjectSectionProps {
@@ -38,15 +34,16 @@ interface ProjectSectionProps {
   subtitle: string;
   projects: Project[];
   onProjectClick: (project: Project) => void;
+  onHover: (text: string) => void;
+  onHoverBlock: (isHovering: boolean) => void;
 }
 
-const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projects, onProjectClick }) => {
+const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projects, onProjectClick, onHover, onHoverBlock }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (containerRef.current) {
       const { current } = containerRef;
-      // 每次滚动约一个卡片宽度 + 间距
       const scrollAmount = direction === 'left' ? -600 : 600;
       current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
@@ -65,13 +62,12 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative group">
-        {/* Navigation Buttons - 垂直居中于项目卡片图片 */}
         <button
           onClick={() => scroll('left')}
           className={`${SCROLL_BUTTON_BASE} ${SCROLL_BUTTON_THEME} left-8 ${SCROLL_BUTTON_VERTICAL_POSITION}`}
           aria-label="Scroll left"
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft size={24} />
         </button>
 
         <button
@@ -79,7 +75,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
           className={`${SCROLL_BUTTON_BASE} ${SCROLL_BUTTON_THEME} right-8 ${SCROLL_BUTTON_VERTICAL_POSITION}`}
           aria-label="Scroll right"
         >
-          <ArrowRight size={20} />
+          <ArrowRight size={24} />
         </button>
 
         <div
@@ -94,6 +90,14 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
               {...FADE_IN_RIGHT}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               onClick={() => onProjectClick(project)}
+              onMouseEnter={() => {
+                onHover("view");
+                onHoverBlock(true);
+              }}
+              onMouseLeave={() => {
+                onHover("");
+                onHoverBlock(false);
+              }}
             >
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-6 bg-stone-300">
                 <img
@@ -118,7 +122,6 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
             </motion.div>
           ))}
 
-          {/* 滚动末尾的填充空间 */}
           <div className="w-12 flex-shrink-0" />
         </div>
       </div>
@@ -126,9 +129,9 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
   );
 };
 
-export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
+export const Projects: React.FC<ProjectsProps> = ({ onProjectClick, onHover, onHoverBlock }) => {
   return (
-    <div id="projects" className="py-24 bg-stone-50 overflow-hidden">
+    <div id="projects" className="py-24 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
         <h2 className="font-serif text-4xl md:text-5xl text-stone-800 mb-4">Selected Works</h2>
         <p className="font-sans text-stone-500 max-w-md">A curation of recent endeavors exploring space, texture, and silence.</p>
@@ -139,6 +142,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
         subtitle="Architecture / Interior / Landscape"
         projects={SPATIAL_PROJECTS}
         onProjectClick={onProjectClick}
+        onHover={onHover}
+        onHoverBlock={onHoverBlock}
       />
 
       <ProjectSection
@@ -146,6 +151,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
         subtitle="Product Design / Furniture"
         projects={PRODUCT_PROJECTS}
         onProjectClick={onProjectClick}
+        onHover={onHover}
+        onHoverBlock={onHoverBlock}
       />
 
       <ProjectSection
@@ -153,7 +160,10 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
         subtitle="Brand Identity / Typography"
         projects={IDENTITY_PROJECTS}
         onProjectClick={onProjectClick}
+        onHover={onHover}
+        onHoverBlock={onHoverBlock}
       />
     </div>
   );
 };
+

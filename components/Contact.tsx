@@ -28,7 +28,7 @@ export const Contact: React.FC = () => {
 
                <div className="space-y-4">
                   <a href="mailto:hello@komorebi.design" className="block font-serif text-2xl md:text-3xl text-stone-800 hover:text-wabi-clay transition-colors underline decoration-1 underline-offset-8">
-                     hello@komorebi.design
+                     roclee24@163.com
                   </a>
                </div>
             </div>
@@ -57,17 +57,7 @@ export const Contact: React.FC = () => {
                </form>
             </motion.div>
          </div>
-
-         <div className="border-t border-stone-300 pt-8 mt-20 flex flex-wrap gap-8 justify-between items-end">
-            <div className="flex gap-6">
-               {SOCIAL_LINKS.map(link => (
-                  <a key={link.name} href={link.url} className="flex items-center gap-1 font-sans text-xs uppercase tracking-widest text-stone-500 hover:text-stone-900 transition-colors">
-                     {link.name} <ArrowUpRight size={12} />
-                  </a>
-               ))}
-            </div>
-            <p className="font-sans text-xs text-stone-400">© 2024 Komorebi Design. All rights reserved.</p>
-         </div>
       </Section>
    );
 };
+
