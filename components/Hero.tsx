@@ -13,7 +13,7 @@ interface HeroProps {
 }
 
 const Word: React.FC<{ text: string; trans: string; onHover: (text: string) => void; }> = ({ text, trans, onHover }) => (
-  <span 
+  <span
     className="inline-block cursor-none transition-opacity duration-300 hover:opacity-20"
     onMouseEnter={() => onHover(trans)}
     onMouseLeave={() => onHover("")}
@@ -27,7 +27,7 @@ const Spacer = () => <span className="inline-block w-[0.2em]">&nbsp;</span>;
 export const Hero: React.FC<HeroProps> = ({ onHover, onHoverBlock }) => {
   return (
     <Section id="home" className="min-h-screen flex flex-col justify-center relative">
-      <div 
+      <div
         className="max-w-4xl"
       >
         <motion.p
@@ -39,22 +39,21 @@ export const Hero: React.FC<HeroProps> = ({ onHover, onHoverBlock }) => {
           AI Designer & Artist
         </motion.p>
 
-        <div 
+        <div
           className="font-serif text-5xl md:text-7xl lg:text-9xl leading-tight text-stone-900 mb-12"
           onMouseEnter={() => onHoverBlock(true)}
           onMouseLeave={() => onHoverBlock(false)}
         >
           <div className="block">
-            <Word text="Finding" trans="发现" onHover={onHover} /><Spacer />
-            <Word text="beauty" trans="美" onHover={onHover} /><Spacer />
-            <Word text="in" trans="在" onHover={onHover} />
+            <Word text="Welcome" trans="欢迎" onHover={onHover} /><Spacer />
+            <Word text="to" trans="来到" onHover={onHover} /><Spacer />
           </div>
           <div className="block">
-            <Word text="imperfection" trans="不完美" onHover={onHover} /><Spacer />
-            <Word text="&" trans="和" onHover={onHover} />
+            <Word text="my" trans="我的" onHover={onHover} /><Spacer />
+            <Word text="&" trans="^_^" onHover={onHover} />
           </div>
           <div className="block">
-            <Word text="simplicity." trans="简约中" onHover={onHover} />
+            <Word text="portfolio." trans="世界" onHover={onHover} />
           </div>
         </div>
 
