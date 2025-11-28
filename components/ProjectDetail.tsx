@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Project } from '../types';
 import { motion } from 'framer-motion';
-import { X, ArrowRight } from 'lucide-react';
+import { X, ArrowRight, ArrowLeft } from 'lucide-react';
 import { zIndex } from '../constants/zIndex';
 import { createFadeInUp } from '../constants/animations';
 
 const FADE_IN_UP = createFadeInUp();
-const FADE_IN_UP_LARGE = createFadeInUp(0.5, 50);
+const FADE_IN_UP_LARGE = createFadeInUp(0.5);
 
 interface ProjectDetailProps {
   project: Project;
@@ -22,20 +22,63 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
   }, []);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
-      className="fixed inset-0 bg-[#F5F2EB] overflow-y-auto"
+      className="fixed inset-0 bg-wabi-paper overflow-y-auto"
       style={{ zIndex: zIndex.PROJECT_DETAIL }}
     >
-      <div 
-        className="sticky top-0 left-0 right-0 p-6 md:p-12 flex justify-between items-center bg-[#F5F2EB]/90 backdrop-blur-md"
+      <div
+        className="sticky top-0 left-0 right-0 px-6 md:px-12 py-4 flex justify-between items-center bg-wabi-paper/70 backdrop-blur-md"
         style={{ zIndex: zIndex.PROJECT_CARD_HOVER }}
       >
-        <div className="flex-1">
-          <h2 className="text-2xl md:text-4xl font-serif font-medium text-stone-800">{project.title}</h2>
+        <motion.button
+          onClick={onClose}
+          className="relative p-2 rounded-full overflow-hidden group"
+          aria-label="Close project detail"
+          whileHover={{
+            scale: 1.1,
+            rotate: 90,
+            transition: { duration: 0.3, ease: "easeInOut" }
+          }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          {/* Glass effect background */}
+          <div className="absolute inset-0 bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl" />
+
+          {/* Shimmer effect */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            style={{
+              background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%)',
+              transform: 'translateX(-100%)',
+            }}
+          />
+
+          {/* Animated shimmer on hover */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+            initial={{ x: "-100%" }}
+            whileHover={{
+              x: "100%",
+              transition: { duration: 0.6, ease: "easeInOut" }
+            }}
+          />
+
+          {/* Icon */}
+          <motion.div
+            whileHover={{
+              color: "#1c1917",
+              transition: { duration: 0.2 }
+            }}
+          >
+            <X size={24} className="relative text-stone-700 z-10" />
+          </motion.div>
+        </motion.button>
+        <div className="flex-1 text-right">
+          <h2 className="text-xl md:text-2xl font-serif font-medium text-stone-500">{project.title}</h2>
         </div>
       </div>
 
@@ -46,7 +89,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.2 }}
-          className="w-full aspect-video bg-stone-200 mb-16 overflow-hidden"
+          className="w-full aspect-video bg-stone-200 mb-16 overflow-hidden rounded-3xl"
         >
           <img
             src={project.thumbnailUrl}
@@ -97,15 +140,24 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
               transition={{ duration: 0.6 }}
               className="w-full"
             >
-              <img src={img} alt={`${project.title} detail ${idx}`} className="w-full h-auto object-cover" />
+              <img src={img} alt={`${project.title} detail ${idx}`} className="w-full h-auto object-cover rounded-2xl" />
             </motion.div>
           ))}
         </div>
 
         {/* Next Project Teaser (Mock) */}
-        <div className="mt-32 pt-12 border-t border-stone-300 flex justify-between items-center cursor-pointer group" onClick={onClose}>
-          <span className="font-serif text-2xl md:text-4xl text-stone-400 group-hover:text-stone-800 transition-colors">Next Project</span>
-          <ArrowRight className="text-stone-400 group-hover:translate-x-4 transition-transform duration-300" size={32} />
+        {/* Back to All Projects */}
+        <div
+          className="mt-32 pt-12 border-t border-stone-300 flex justify-center items-center cursor-pointer group"
+          onClick={onClose}
+        >
+          <ArrowLeft
+            className="text-stone-400 group-hover:-translate-x-2 group-hover:text-stone-800 transition-all duration-300 mr-3"
+            size={24}
+          />
+          <span className="font-serif text-xl md:text-2xl text-stone-400 group-hover:text-stone-800 transition-colors">
+            Back to All Projects
+          </span>
         </div>
       </div>
     </motion.div>

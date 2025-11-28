@@ -29,18 +29,18 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden selection:bg-wabi-clay selection:text-white">
-      <FluidBackground />
+    <div className="relative w-full min-h-screen overflow-x-hidden selection:bg-wabi-clay selection:text-white bg-wabi-paper bg-noise">
+      {/* <FluidBackground /> */}
       <CustomCursor text={cursorText} isHoveringBlock={isHoveringBlock} />
       <Navigation onLogoClick={handleLogoClick} />
-      
+
       <main className="w-full">
         <Hero onHover={setCursorText} onHoverBlock={setIsHoveringBlock} />
         <Profile />
-        <Projects 
-          onProjectClick={handleProjectClick} 
-          onHover={setCursorText} 
-          onHoverBlock={setIsHoveringBlock} 
+        <Projects
+          onProjectClick={handleProjectClick}
+          onHover={setCursorText}
+          onHoverBlock={setIsHoveringBlock}
         />
         <Contact />
       </main>
@@ -49,9 +49,9 @@ const App: React.FC = () => {
 
       <AnimatePresence>
         {selectedProject && (
-          <ProjectDetail 
-            project={selectedProject} 
-            onClose={handleCloseProject} 
+          <ProjectDetail
+            project={selectedProject}
+            onClose={handleCloseProject}
           />
         )}
       </AnimatePresence>

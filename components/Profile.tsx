@@ -13,7 +13,7 @@ export const Profile: React.FC = () => {
           <motion.div
             {...FADE_IN_SCALE}
             transition={{ duration: 0.8 }}
-            className="aspect-[3/4] overflow-hidden rounded-sm relative" style={{ zIndex: zIndex.BASE_CONTENT }}>
+            className="aspect-[3/4] overflow-hidden rounded-2xl relative" style={{ zIndex: zIndex.BASE_CONTENT }}>
             <img
               src='/images/Profile.jpg'
               alt="Profile"
@@ -24,7 +24,7 @@ export const Profile: React.FC = () => {
           <motion.div
             {...FADE_IN_OFFSET}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="absolute top-0 right-0 w-full h-full border border-stone-400 -z-0 translate-x-4 translate-y-4"
+            className="absolute top-0 right-0 w-full h-full border border-stone-400 -z-0 translate-x-4 translate-y-4 rounded-2xl"
             style={{ zIndex: zIndex.BACKGROUND_ELEMENTS }}
           />
         </div>

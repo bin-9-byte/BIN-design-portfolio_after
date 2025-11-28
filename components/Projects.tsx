@@ -19,7 +19,7 @@ const IDENTITY_PROJECTS = PROJECTS.filter(p =>
 );
 
 const SCROLL_BUTTON_BASE = "hidden md:flex absolute z-20 p-2 rounded-full shadow-sm transition-all duration-500 opacity-0 group-hover:opacity-100";
-const SCROLL_BUTTON_THEME = "bg-wabi-paper/90 backdrop-blur-sm border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-white hover:border-stone-300";
+const SCROLL_BUTTON_THEME = "bg-wabi-paper/90 backdrop-blur-sm border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-wabi-paper hover:border-stone-300";
 
 const SCROLL_BUTTON_VERTICAL_POSITION = "top-[225px] -translate-y-1/2";
 
@@ -86,7 +86,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="flex-shrink-0 w-[85vw] md:w-[600px] snap-center cursor-pointer group/card"
+              className="flex-shrink-0 w-[85vw] md:w-[600px] snap-center cursor-none group/card"
               {...FADE_IN_RIGHT}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               onClick={() => onProjectClick(project)}
@@ -99,7 +99,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
                 onHoverBlock(false);
               }}
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-6 bg-stone-300">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 bg-stone-300">
                 <img
                   src={project.thumbnailUrl}
                   alt={project.title}

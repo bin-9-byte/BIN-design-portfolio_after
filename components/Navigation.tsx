@@ -32,11 +32,11 @@ export const Navigation: React.FC<NavigationProps> = ({ onLogoClick }) => {
 
   return (
     <>
-      <header 
+      <header
         className={`fixed top-0 left-0 right-0 flex justify-between items-center px-6 md:px-12 py-6 transition-all duration-500 ${scrolled ? 'bg-wabi-paper/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}
         style={{ zIndex: zIndex.NAVIGATION }}
       >
-        <div 
+        <div
           className="text-xl md:text-2xl font-serif font-medium tracking-wide cursor-pointer"
           onClick={onLogoClick}
         >
@@ -46,7 +46,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onLogoClick }) => {
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8">
           {NAVIGATION_LINKS.map((link) => (
-            <a 
+            <a
               key={link.name}
               href={link.href}
               className="font-sans text-sm tracking-widest uppercase hover:text-wabi-clay transition-colors duration-300 relative group cursor-pointer"
@@ -58,7 +58,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onLogoClick }) => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           onClick={() => setMenuOpen(!isMenuOpen)}
           className="md:hidden p-2 text-stone-800"
           style={{ zIndex: zIndex.NAVIGATION }}
@@ -79,7 +79,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onLogoClick }) => {
             style={{ zIndex: zIndex.NAVIGATION_MOBILE_MENU }}
           >
             {NAVIGATION_LINKS.map((link) => (
-              <a 
+              <a
                 key={link.name}
                 href={link.href}
                 className="text-3xl font-serif text-stone-800"
