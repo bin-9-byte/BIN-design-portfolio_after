@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { EASE_DEFAULT, DURATIONS } from '../constants/animations';
 
 export const Footer: React.FC = () => {
   return (
@@ -66,12 +67,15 @@ export const Footer: React.FC = () => {
         {/* Bottom Logo Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Left: Circle */}
-          <div className="aspect-square w-full flex items-center justify-center">
+          <div className="aspect-square w-full flex items-center justify-center overflow-hidden group">
             <motion.div
-              className="w-full h-full bg-stone-900 rounded-full flex items-center justify-center cursor-pointer"
+              className="w-full h-full bg-stone-900 rounded-full flex items-center justify-center cursor-pointer overflow-hidden"
               whileHover={{ rotate: 90 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              transition={{ duration: DURATIONS.medium, ease: EASE_DEFAULT }}
+              style={{ willChange: 'transform', contain: 'layout paint', transformOrigin: '50% 50%', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
             >
+              {/* 微弱光晕 */}
+              <div className="pointer-events-none absolute inset-0 rounded-full blur-[14px] opacity-0 group-hover:opacity-30 transition-opacity duration-500" style={{ background: 'radial-gradient(closest-side, rgba(160,120,85,0.25), transparent 70%)' }} />
               <span className="text-[#FAFAFA] font-serif text-6xl md:text-8xl italic tracking-tight">collectiv</span>
             </motion.div>
           </div>

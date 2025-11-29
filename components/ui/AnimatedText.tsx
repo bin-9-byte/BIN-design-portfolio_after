@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, useReducedMotion } from 'framer-motion';
 
 interface AnimatedTextProps {
   text: string;
@@ -10,6 +10,7 @@ interface AnimatedTextProps {
 export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = '', delay = 0 }) => {
   // Splitting text into words for a staggered reveal
   const words = text.split(' ');
+  const reduce = useReducedMotion();
 
   const container: Variants = {
     hidden: { opacity: 0 },
@@ -43,14 +44,14 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = ''
   return (
     <motion.div
       style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap', paddingBottom: '0.1em' }}
-      variants={container}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
+      variants={reduce ? undefined : container}
+      initial={reduce ? undefined : "hidden"}
+      whileInView={reduce ? undefined : "visible"}
+      viewport={reduce ? undefined : { once: true, margin: "-10%" }}
       className={className}
     >
       {words.map((word, index) => (
-        <motion.span variants={child} style={{ marginRight: '0.25em' }} key={index}>
+        <motion.span variants={reduce ? undefined : child} style={{ marginRight: '0.25em' }} key={index}>
           {word}
         </motion.span>
       ))}

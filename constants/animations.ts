@@ -11,6 +11,18 @@ import { Variants } from 'framer-motion';
 // 通用动画参数
 // ----------------------------------------------------------------------------
 
+/** 统一的缓动曲线，保持全站动画一致性 */
+export const EASE_DEFAULT = 'easeInOut' as const;
+
+/** 标准时长集合，避免魔法数字 */
+export const DURATIONS = {
+    quick: 0.25,
+    fast: 0.3,
+    medium: 0.5,
+    slow: 0.8,
+    breath: 2
+} as const;
+
 /** 标准视口配置：动画只触发一次，提前 10% 触发 */
 export const VIEWPORT_ONCE = {
     once: true,
@@ -133,9 +145,10 @@ export const STAGGER_CHILD: Variants = {
  * @param delay 延迟时间（秒）
  * @param duration 动画时长（秒）
  */
-export const createTransition = (delay = 0, duration = 0.8) => ({
+export const createTransition = (delay = 0, duration = DURATIONS.slow) => ({
     duration,
-    delay
+    delay,
+    ease: EASE_DEFAULT
 } as const);
 
 /**

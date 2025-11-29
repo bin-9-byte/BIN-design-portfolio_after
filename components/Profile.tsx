@@ -1,31 +1,44 @@
 import React from 'react';
 import { Section } from './ui/Section';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { EASE_DEFAULT, DURATIONS } from '../constants/animations';
 import { FADE_IN_SCALE, FADE_IN_OFFSET, FADE_IN_UP, FADE_IN, createTransition } from '../constants/animations';
 import { zIndex } from "../constants/zIndex";
 
 export const Profile: React.FC = () => {
+  const sectionRef = React.useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const imgX = useTransform(scrollYProgress, [0, 1], [0, 6]);
+  const imgY = useTransform(scrollYProgress, [0, 1], [0, -6]);
+  const frameX = useTransform(scrollYProgress, [0, 1], [4, 8]);
+  const frameY = useTransform(scrollYProgress, [0, 1], [4, 8]);
   return (
     <Section id="profile" className="bg-transparent min-h-[80vh] flex items-center">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
+      <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
         {/* Image Area - Asymmetric placement */}
         <div className="md:col-span-5 relative">
           <motion.div
             {...FADE_IN_SCALE}
-            transition={{ duration: 0.8 }}
-            className="aspect-[3/4] overflow-hidden rounded-2xl relative" style={{ zIndex: zIndex.BASE_CONTENT }}>
+            transition={{ duration: DURATIONS.slow, ease: EASE_DEFAULT }}
+            className="aspect-[3/4] overflow-hidden rounded-2xl relative" style={{ zIndex: zIndex.BASE_CONTENT, willChange: 'transform' }}
+            style={{ zIndex: zIndex.BASE_CONTENT, x: imgX, y: imgY }}
+          >
             <img
               src='/images/Profile.jpg'
               alt="Profile"
+              width={900}
+              height={1200}
+              decoding="async"
+              loading="lazy"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>
           {/* Decorative frame */}
           <motion.div
             {...FADE_IN_OFFSET}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="absolute top-0 right-0 w-full h-full border border-stone-400 -z-0 translate-x-4 translate-y-4 rounded-2xl"
-            style={{ zIndex: zIndex.BACKGROUND_ELEMENTS }}
+            transition={{ duration: DURATIONS.slow, delay: 0.2, ease: EASE_DEFAULT }}
+            className="absolute top-0 right-0 w-full h-full border border-stone-400 translate-x-4 translate-y-4 rounded-2xl"
+            style={{ zIndex: zIndex.BACKGROUND_ELEMENTS, willChange: 'transform', x: frameX, y: frameY }}
           />
         </div>
 
@@ -34,6 +47,7 @@ export const Profile: React.FC = () => {
           <motion.h2
             {...FADE_IN_UP}
             className="font-serif text-4xl md:text-5xl text-stone-800"
+            style={{ willChange: 'transform, opacity' }}
           >
             The Essence of <br /><span className="italic text-wabi-clay">Impermanence</span>
           </motion.h2>
@@ -42,6 +56,7 @@ export const Profile: React.FC = () => {
             {...FADE_IN}
             transition={createTransition(0.2)}
             className="font-sans text-stone-600 leading-loose space-y-6"
+            style={{ willChange: 'opacity' }}
           >
             <p>
               I am MaBin, a multidisciplinary designer based in Beijing. My work is deeply rooted in the philosophy of Wabi-Sabi—appreciating the beauty that is imperfect, impermanent, and incomplete.
@@ -55,6 +70,7 @@ export const Profile: React.FC = () => {
             {...FADE_IN}
             transition={createTransition(0.4)}
             className="grid grid-cols-2 gap-6 mt-4 font-serif text-lg text-stone-700"
+            style={{ willChange: 'opacity, transform' }}
           >
             <div>
               <h3 className="uppercase text-xs tracking-widest text-stone-400 mb-2 font-sans">Focus</h3>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Section } from './ui/Section';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { zIndex } from "../constants/zIndex";
-import { createFadeInUp, createFadeIn } from '../constants/animations';
+import { createFadeInUp, createFadeIn, EASE_DEFAULT, createStaggerContainer, STAGGER_CHILD, DURATIONS } from '../constants/animations';
 
 const FADE_IN_UP = createFadeInUp();
 
@@ -13,18 +13,23 @@ interface HeroProps {
 }
 
 const Word: React.FC<{ text: string; trans: string; onHover: (text: string) => void; }> = ({ text, trans, onHover }) => (
-  <span
+  <motion.span
     className="inline-block cursor-none transition-opacity duration-300 hover:opacity-20"
     onMouseEnter={() => onHover(trans)}
     onMouseLeave={() => onHover("")}
+    variants={STAGGER_CHILD}
+    whileHover={{ x: 2, y: -1 }}
+    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+    style={{ willChange: 'transform, opacity' }}
   >
     {text}
-  </span>
+  </motion.span>
 );
 
 const Spacer = () => <span className="inline-block w-[0.2em]">&nbsp;</span>;
 
 export const Hero: React.FC<HeroProps> = ({ onHover, onHoverBlock }) => {
+  const reduce = useReducedMotion();
   return (
     <Section id="home" className="min-h-screen flex flex-col justify-center relative">
       <div
@@ -39,23 +44,26 @@ export const Hero: React.FC<HeroProps> = ({ onHover, onHoverBlock }) => {
           AI Designer & Artist
         </motion.p>
 
-        <div
+        <motion.div
+          variants={reduce ? undefined : createStaggerContainer(0)}
+          initial={reduce ? undefined : "hidden"}
+          animate={reduce ? undefined : "visible"}
           className="font-serif text-5xl md:text-7xl lg:text-9xl leading-tight text-stone-900 mb-12"
           onMouseEnter={() => onHoverBlock(true)}
           onMouseLeave={() => onHoverBlock(false)}
         >
-          <div className="block">
+          <motion.div className="block" variants={reduce ? undefined : createStaggerContainer(0)}>
             <Word text="Welcome" trans="欢迎" onHover={onHover} /><Spacer />
             <Word text="to" trans="来到" onHover={onHover} /><Spacer />
-          </div>
-          <div className="block">
+          </motion.div>
+          <motion.div className="block" variants={reduce ? undefined : createStaggerContainer(0.05)}>
             <Word text="my" trans="我的" onHover={onHover} /><Spacer />
             <Word text="&" trans="^_^" onHover={onHover} />
-          </div>
-          <div className="block">
+          </motion.div>
+          <motion.div className="block" variants={reduce ? undefined : createStaggerContainer(0.1)}>
             <Word text="portfolio." trans="世界" onHover={onHover} />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <motion.div
           variants={createFadeIn(1.5)}
@@ -75,15 +83,36 @@ export const Hero: React.FC<HeroProps> = ({ onHover, onHoverBlock }) => {
         initial="hidden"
         animate="visible"
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
+        style={{ willChange: 'transform, opacity' }}
         onClick={() => document.getElementById('profile')?.scrollIntoView({ behavior: 'smooth' })}
       >
         <span className="text-xs uppercase tracking-widest text-stone-400">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        >
-          <ArrowDown className="text-stone-400 w-5 h-5" />
-        </motion.div>
+        {/* 呼吸光晕 */}
+        {!reduce && (
+          <motion.div
+            className="relative w-8 h-8 flex items-center justify-center"
+            aria-hidden
+          >
+            <motion.div
+              className="absolute inset-0 rounded-full bg-wabi-clay/25 blur-[8px]"
+              animate={{ scale: [1, 1.12, 1], opacity: [0.15, 0.35, 0.15] }}
+              transition={{ duration: DURATIONS.breath, repeat: Infinity, ease: EASE_DEFAULT }}
+              style={{ willChange: 'transform, opacity' }}
+            />
+            <motion.div
+              animate={reduce ? undefined : { y: [0, 10, 0] }}
+              transition={reduce ? undefined : { repeat: Infinity, duration: DURATIONS.breath, ease: EASE_DEFAULT }}
+              style={{ willChange: 'transform' }}
+            >
+              <ArrowDown className="text-stone-400 w-5 h-5" />
+            </motion.div>
+          </motion.div>
+        )}
+        {reduce && (
+          <motion.div>
+            <ArrowDown className="text-stone-400 w-5 h-5" />
+          </motion.div>
+        )}
       </motion.div>
     </Section>
   );

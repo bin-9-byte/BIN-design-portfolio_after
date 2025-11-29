@@ -9,7 +9,7 @@ import { FADE_IN_UP, FADE_IN, createTransition } from '../constants/animations';
 // 表单输入字段样式常量
 // ============================================================================
 const FORM_LABEL_CLASS = "block text-xs uppercase tracking-widest text-stone-400 mb-2";
-const FORM_INPUT_CLASS = "w-full bg-transparent border-b border-stone-300 py-2 text-stone-800 focus:outline-none focus:border-stone-800 transition-colors";
+const FORM_INPUT_CLASS = "w-full bg-transparent border-b border-stone-300 py-2 text-stone-800 focus:outline-none focus:border-stone-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2 focus-visible:ring-offset-wabi-paper";
 
 export const Contact: React.FC = () => {
    return (
@@ -19,6 +19,7 @@ export const Contact: React.FC = () => {
                <motion.h2
                   {...FADE_IN_UP}
                   className="font-serif text-5xl md:text-7xl text-stone-800 mb-8"
+                  style={{ willChange: 'transform, opacity' }}
                >
                   Let's create <br />something <span className="text-wabi-clay italic">timeless</span>.
                </motion.h2>
@@ -27,7 +28,7 @@ export const Contact: React.FC = () => {
                </p>
 
                <div className="space-y-4">
-                  <a href="mailto:hello@komorebi.design" className="block font-serif text-2xl md:text-3xl text-stone-800 hover:text-wabi-clay transition-colors underline decoration-1 underline-offset-8">
+                  <a href="mailto:hello@komorebi.design" className="block font-serif text-2xl md:text-3xl text-stone-800 hover:text-wabi-clay transition-colors underline decoration-1 underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2 focus-visible:ring-offset-wabi-paper" aria-label="Send email to roclee24@163.com">
                      roclee24@163.com
                   </a>
                </div>
@@ -37,21 +38,22 @@ export const Contact: React.FC = () => {
                {...FADE_IN}
                transition={createTransition(0.3)}
                className="flex flex-col justify-end"
+               style={{ willChange: 'opacity' }}
             >
-               <form className="space-y-6 w-full max-w-md">
+               <form className="space-y-6 w-full max-w-md" aria-label="Contact form">
                   <div>
                      <label className={FORM_LABEL_CLASS}>Name</label>
-                     <input type="text" className={FORM_INPUT_CLASS} placeholder="John Doe" />
+                     <input type="text" className={FORM_INPUT_CLASS} placeholder="John Doe" name="name" autoComplete="name" />
                   </div>
                   <div>
                      <label className={FORM_LABEL_CLASS}>Email</label>
-                     <input type="email" className={FORM_INPUT_CLASS} placeholder="john@example.com" />
+                     <input type="email" className={FORM_INPUT_CLASS} placeholder="john@example.com" name="email" autoComplete="email" />
                   </div>
                   <div>
                      <label className={FORM_LABEL_CLASS}>Message</label>
-                     <textarea rows={4} className={`${FORM_INPUT_CLASS} resize-none`} placeholder="Tell me about your project..."></textarea>
+                     <textarea rows={4} className={`${FORM_INPUT_CLASS} resize-none`} placeholder="Tell me about your project..." name="message"></textarea>
                   </div>
-                  <button className="font-sans text-sm uppercase tracking-widest bg-stone-800 text-stone-50 px-8 py-3 hover:bg-wabi-clay transition-colors duration-300 self-start mt-4">
+                  <button type="submit" className="font-sans text-sm uppercase tracking-widest bg-stone-800 text-stone-50 px-8 py-3 hover:bg-wabi-clay transition-colors duration-300 self-start mt-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2">
                      Send Message
                   </button>
                </form>
