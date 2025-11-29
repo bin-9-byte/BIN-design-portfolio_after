@@ -37,7 +37,6 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
       >
         <motion.button
           onClick={onClose}
-          className="relative p-2 rounded-full overflow-hidden group"
           aria-label="Close project detail"
           whileHover={{
             scale: 1.03,

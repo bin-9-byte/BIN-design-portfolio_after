@@ -20,8 +20,8 @@ export const Profile: React.FC = () => {
           <motion.div
             {...FADE_IN_SCALE}
             transition={{ duration: DURATIONS.slow, ease: EASE_DEFAULT }}
-            className="aspect-[3/4] overflow-hidden rounded-2xl relative" style={{ zIndex: zIndex.BASE_CONTENT, willChange: 'transform' }}
-            style={{ zIndex: zIndex.BASE_CONTENT, x: imgX, y: imgY }}
+            className="aspect-[3/4] overflow-hidden rounded-2xl relative"
+            style={{ zIndex: zIndex.BASE_CONTENT, willChange: 'transform', x: imgX, y: imgY }}
           >
             <img
               src='/images/Profile.jpg'

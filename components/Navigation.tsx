@@ -88,7 +88,6 @@ export const Navigation: React.FC<NavigationProps> = ({ onLogoClick }) => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 text-stone-800"
           style={{ zIndex: zIndex.NAVIGATION }}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMenuOpen}

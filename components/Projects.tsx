@@ -91,7 +91,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="flex-shrink-0 w-[85vw] md:w-[600px] snap-center cursor-none group/card"
+              className="flex-shrink-0 w-[85vw] md:w-[600px] snap-center cursor-none group/card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2"
               {...FADE_IN_RIGHT}
               transition={{ duration: DURATIONS.medium, delay: index * 0.1, ease: EASE_DEFAULT }}
               onClick={() => onProjectClick(project)}
@@ -104,7 +104,6 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
                   onProjectClick(project);
                 }
               }}
-              className="flex-shrink-0 w-[85vw] md:w-[600px] snap-center cursor-none group/card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2"
               onMouseEnter={() => {
                 onHover("view");
                 onHoverBlock(true);
@@ -114,8 +113,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
                 onHoverBlock(false);
               }}
               style={{ willChange: 'transform, opacity' }}
-              whileHover={reduce ? undefined : { rotate: -0.5, y: -2 }}
-              transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+              whileHover={reduce ? undefined : { rotate: -0.5, y: -2, transition: { type: 'spring', stiffness: 250, damping: 20 } }}
             >
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 bg-stone-300">
                 <img
