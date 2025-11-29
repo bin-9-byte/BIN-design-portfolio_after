@@ -70,7 +70,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ text, isHoveringBloc
       {/* Floating translation text */}
       <motion.div
         style={{ scale: textScale, opacity: textOpacity, zIndex: zIndex.PROJECT_CARD_HOVER, willChange: 'transform, opacity' }}
-        className={`relative text-stone-800 mix-blend-normal font-serif text-4xl font-normal`}
+        className={`relative text-stone-800 mix-blend-normal text-4xl font-normal ${/[\u4e00-\u9fff]/.test(text) ? 'cn-serif' : 'font-serif'}`}
         transition={{ duration: DURATIONS.quick, ease: EASE_DEFAULT }}
       >
         {text}

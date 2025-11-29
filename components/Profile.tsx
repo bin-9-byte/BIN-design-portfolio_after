@@ -49,7 +49,7 @@ export const Profile: React.FC = () => {
             className="font-serif text-4xl md:text-5xl text-stone-800"
             style={{ willChange: 'transform, opacity' }}
           >
-            The Essence of <br /><span className="italic text-wabi-clay">Impermanence</span>
+            Structured Aesthetics in <br /><span className="italic text-wabi-clay">Generative World</span>
           </motion.h2>
 
           <motion.div
@@ -59,7 +59,10 @@ export const Profile: React.FC = () => {
             style={{ willChange: 'opacity' }}
           >
             <p>
-              I am MaBin, a multidisciplinary designer based in Beijing. My work is deeply rooted in the philosophy of Wabi-Sabi—appreciating the beauty that is imperfect, impermanent, and incomplete.
+              Hello! 我是马斌, 一名设计师.
+            </p>
+            <p>
+              My work is deeply rooted in the philosophy of Wabi-Sabi—appreciating the beauty that is imperfect, impermanent, and incomplete.
             </p>
             <p>
               In a digital world often obsessed with pixel-perfect sterility, I strive to introduce warmth, texture, and organic flow. I believe that good design should breathe, evolving with its content and its user.

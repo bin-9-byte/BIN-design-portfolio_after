@@ -157,13 +157,13 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick, onHover, onH
   return (
     <div id="projects" className="py-24 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
-        <h2 className="font-serif text-4xl md:text-5xl text-stone-800 mb-4">Selected Works</h2>
-        <p className="font-sans text-stone-500 max-w-md">A curation of recent endeavors exploring space, texture, and silence.</p>
+        <h2 className="font-serif text-4xl md:text-5xl text-stone-800 mb-4">My Selected Works</h2>
+        <p className="font-sans text-stone-500 max-w-md">近期对AI、质感与空间的尝试与探索</p>
       </div>
 
       <ProjectSection
-        title="Spatial Narratives"
-        subtitle="Architecture / Interior / Landscape"
+        title="AIGC Projects"
+        subtitle="Workflow / Model train / Prompt engineering"
         projects={SPATIAL_PROJECTS}
         onProjectClick={onProjectClick}
         onHover={onHover}
@@ -171,8 +171,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick, onHover, onH
       />
 
       <ProjectSection
-        title="Tangible Objects"
-        subtitle="Product Design / Furniture"
+        title="User Experience Design"
+        subtitle="Intelligent Creative Cloud / Lumi"
         projects={PRODUCT_PROJECTS}
         onProjectClick={onProjectClick}
         onHover={onHover}

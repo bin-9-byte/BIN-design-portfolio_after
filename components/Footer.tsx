@@ -76,13 +76,13 @@ export const Footer: React.FC = () => {
             >
               {/* 微弱光晕 */}
               <div className="pointer-events-none absolute inset-0 rounded-full blur-[14px] opacity-0 group-hover:opacity-30 transition-opacity duration-500" style={{ background: 'radial-gradient(closest-side, rgba(160,120,85,0.25), transparent 70%)' }} />
-              <span className="text-[#FAFAFA] font-serif text-6xl md:text-8xl italic tracking-tight">collectiv</span>
+              <span className="text-[#FAFAFA] font-serif text-6xl md:text-8xl italic tracking-tight">ma·binary</span>
             </motion.div>
           </div>
 
           {/* Right: Box with cllv. */}
           <div className="aspect-square w-full border border-stone-200 flex items-center justify-center">
-            <span className="font-serif text-4xl md:text-5xl italic text-stone-900">cllv.</span>
+            <span className="font-serif text-4xl md:text-5xl italic text-stone-900">bin.</span>
           </div>
         </div>
       </div>
