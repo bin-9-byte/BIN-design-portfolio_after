@@ -15,7 +15,7 @@ export const Profile: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="aspect-[3/4] overflow-hidden rounded-2xl relative" style={{ zIndex: zIndex.BASE_CONTENT }}>
             <img
-              src='/public/images/Profile.jpg'
+              src='/images/Profile.jpg'
               alt="Profile"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
