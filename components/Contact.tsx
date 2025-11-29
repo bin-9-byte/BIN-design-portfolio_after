@@ -9,7 +9,7 @@ import { FADE_IN_UP, FADE_IN, createTransition } from '../constants/animations';
 // 表单输入字段样式常量
 // ============================================================================
 const FORM_LABEL_CLASS = "block text-xs uppercase tracking-widest text-stone-400 mb-2";
-const FORM_INPUT_CLASS = "w-full bg-transparent border-b border-stone-300 py-2 text-stone-800 focus:outline-none focus:border-stone-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2 focus-visible:ring-offset-wabi-paper";
+const FORM_INPUT_CLASS = "w-full bg-transparent border-b border-stone-300 py-2 text-stone-800 focus:outline-none transition-colors";
 
 export const Contact: React.FC = () => {
    return (

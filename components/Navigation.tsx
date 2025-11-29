@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NAVIGATION_LINKS } from '../constants';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { EASE_DEFAULT, DURATIONS } from '../constants/animations';
 import { zIndex } from '../constants/zIndex';
 
@@ -13,6 +13,42 @@ export const Navigation: React.FC<NavigationProps> = ({ onLogoClick }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
+  const reduce = useReducedMotion();
+
+  // Custom smooth scroll with controllable duration (slower, more perceptible)
+  const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  const smoothScrollTo = (targetY: number, duration: number) =>
+    new Promise<void>((resolve) => {
+      const startY = window.pageYOffset;
+      const delta = targetY - startY;
+      const start = performance.now();
+
+      const step = (now: number) => {
+        const elapsed = now - start;
+        const t = Math.min(1, elapsed / duration);
+        const eased = easeInOutCubic(t);
+        window.scrollTo(0, startY + delta * eased);
+        if (t < 1) requestAnimationFrame(step);
+        else resolve();
+      };
+      requestAnimationFrame(step);
+    });
+
+  // Animate section heading subtly (lift + opacity) 
+  const animateHeading = (el: HTMLElement) => {
+    if (reduce) return;
+    try {
+      const heading = el.querySelector('h1, h2, h3') as HTMLElement | null;
+      heading?.animate(
+        [
+          { transform: 'translateY(0)', opacity: 1 },
+          { transform: 'translateY(-2px)', opacity: 0.88 },
+          { transform: 'translateY(0)', opacity: 1 }
+        ],
+        { duration: 500, easing: 'ease-in-out' }
+      );
+    } catch (_) {}
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +76,23 @@ export const Navigation: React.FC<NavigationProps> = ({ onLogoClick }) => {
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
     if (element) {
-      element.scrollIntoView();
+      // If already at section, only animate heading
+      if (activeHref === href) {
+        animateHeading(element);
+      } else {
+        const headerEl = document.querySelector('header');
+        const headerH = (headerEl as HTMLElement | null)?.offsetHeight ?? 0;
+        const rect = element.getBoundingClientRect();
+        const targetY = rect.top + window.pageYOffset - headerH - 8; // small extra gap
+        if (reduce) {
+          window.scrollTo({ top: targetY, behavior: 'auto' });
+          animateHeading(element);
+        } else {
+          const distance = Math.abs(window.pageYOffset - targetY);
+          const duration = Math.max(800, Math.min(1600, distance * 0.6));
+          smoothScrollTo(targetY, duration).then(() => animateHeading(element));
+        }
+      }
     }
     setMenuOpen(false);
   };
@@ -125,6 +177,8 @@ export const Navigation: React.FC<NavigationProps> = ({ onLogoClick }) => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* No top progress bar: simplified heading animation only */}
     </>
   );
 };
