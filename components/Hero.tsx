@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onHover, onHoverBlock }) => {
         >
           <p className="font-sans text-stone-600 leading-relaxed text-lg">
             Embracing the transient nature of digital experiences.
-            Crafting interfaces that feel organic, grounded, and human.
+            Crafting interfaces that feel organic, structured, and human.
           </p>
         </motion.div>
       </div>

@@ -4,6 +4,7 @@ import { SOCIAL_LINKS } from '../constants';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { FADE_IN_UP, FADE_IN, createTransition } from '../constants/animations';
+import { AIChat } from './AIChat';
 
 // ============================================================================
 // 表单输入字段样式常量
@@ -31,7 +32,7 @@ export const Contact: React.FC = () => {
                   <a href="mailto:hello@komorebi.design" className="block font-serif text-2xl md:text-3xl text-stone-800 hover:text-wabi-clay transition-colors underline decoration-1 underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2 focus-visible:ring-offset-wabi-paper" aria-label="Send email to roclee24@163.com">
                      roclee24@163.com
                   </a>
-                  
+
                   {/* 社交媒体链接 */}
                   <div className="pt-4">
                      <p className="text-xs uppercase tracking-widest text-stone-400 mb-4">Connect</p>
@@ -59,23 +60,7 @@ export const Contact: React.FC = () => {
                className="flex flex-col justify-end"
                style={{ willChange: 'opacity' }}
             >
-               <form className="space-y-6 w-full max-w-md" aria-label="Contact form">
-                  <div>
-                     <label className={FORM_LABEL_CLASS}>Name</label>
-                     <input type="text" className={FORM_INPUT_CLASS} placeholder="John Doe" name="name" autoComplete="name" />
-                  </div>
-                  <div>
-                     <label className={FORM_LABEL_CLASS}>Email</label>
-                     <input type="email" className={FORM_INPUT_CLASS} placeholder="john@example.com" name="email" autoComplete="email" />
-                  </div>
-                  <div>
-                     <label className={FORM_LABEL_CLASS}>Message</label>
-                     <textarea rows={4} className={`${FORM_INPUT_CLASS} resize-none`} placeholder="Tell me about your project..." name="message"></textarea>
-                  </div>
-                  <button type="submit" className="font-sans text-sm uppercase tracking-widest bg-stone-800 text-stone-50 px-8 py-3 hover:bg-wabi-clay transition-colors duration-300 self-start mt-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2">
-                     Send Message
-                  </button>
-               </form>
+               <AIChat />
             </motion.div>
          </div>
       </Section>

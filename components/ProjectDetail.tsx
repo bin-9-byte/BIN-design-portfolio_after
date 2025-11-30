@@ -4,9 +4,16 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { X, ArrowRight, ArrowLeft } from 'lucide-react';
 import { zIndex } from '../constants/zIndex';
 import { createFadeInUp, EASE_DEFAULT, DURATIONS } from '../constants/animations';
+import { ProjectSidebar, SidebarSection } from './ProjectSidebar';
 
 const FADE_IN_UP = createFadeInUp();
 const FADE_IN_UP_LARGE = createFadeInUp(0.5);
+
+const SIDEBAR_SECTIONS: SidebarSection[] = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'details', label: 'Details' },
+  { id: 'gallery', label: 'Gallery' },
+];
 
 interface ProjectDetailProps {
   project: Project;
@@ -87,6 +94,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
         </div>
       </div>
 
+      {/* Sidebar Navigation */}
+      <ProjectSidebar sections={SIDEBAR_SECTIONS} />
+
       <motion.div
         initial={{ opacity: 0, scale: reduce ? 1 : 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -95,13 +105,14 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
         style={{ willChange: 'transform, opacity' }}
         className="max-w-5xl mx-auto px-6 md:px-12 pb-24"
       >
-        {/* Hero Image */}
+        {/* Hero Image - Overview Section */}
         <motion.div
+          id="overview"
           variants={FADE_IN_UP}
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.2 }}
-          className="w-full aspect-video bg-stone-200 mb-16 overflow-hidden rounded-3xl"
+          className="w-full aspect-video bg-stone-200 mb-16 overflow-hidden rounded-3xl scroll-mt-20"
         >
           <img
             src={project.thumbnailUrl}
@@ -114,8 +125,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
           />
         </motion.div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+        {/* Content Grid - Details Section */}
+        <div id="details" className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 scroll-mt-20">
           <div className="md:col-span-1 space-y-8">
             <div className="space-y-4 border-t border-stone-300 pt-4">
               <div>
@@ -145,8 +156,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }
           </div>
         </div>
 
-        {/* Additional Images (Reveal) */}
-        <div className="space-y-12">
+        {/* Additional Images (Reveal) - Gallery Section */}
+        <div id="gallery" className="space-y-12 scroll-mt-20">
           {project.images.map((img, idx) => (
             <motion.div
               key={idx}
