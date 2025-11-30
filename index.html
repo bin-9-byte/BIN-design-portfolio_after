@@ -69,14 +69,17 @@
     .hide-scrollbar::-webkit-scrollbar {
       display: none;
     }
+
     .hide-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
     /* iOS 动量滚动，仅在支持的环境生效 */
     .momentum-scroll {
       -webkit-overflow-scrolling: touch;
     }
+
     /* Skip to content link */
     .skip-link {
       position: fixed;
@@ -91,7 +94,11 @@
       transition: transform 0.2s ease-in-out;
       z-index: 100;
     }
-    .skip-link:focus { transform: translateY(0); outline: none; }
+
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: none;
+    }
   </style>
   <script type="importmap">
 {

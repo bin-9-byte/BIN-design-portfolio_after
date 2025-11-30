@@ -59,13 +59,13 @@ export const Profile: React.FC = () => {
             style={{ willChange: 'opacity' }}
           >
             <p>
-              Hello! 我是马斌, 一名设计师.
+              Hello! 我是马斌，一名设计师。
             </p>
             <p>
-              My work is deeply rooted in the philosophy of Wabi-Sabi—appreciating the beauty that is imperfect, impermanent, and incomplete.
+              求学时，我潜心钻研物理空间的规律；如今，我在数字空间中突破边界。设计不止关乎“how things look”，更关乎“how things work”。
             </p>
             <p>
-              In a digital world often obsessed with pixel-perfect sterility, I strive to introduce warmth, texture, and organic flow. I believe that good design should breathe, evolving with its content and its user.
+              我不只是“指令生成”图像，而是“构建”设计概念。AI对我而言是原材料，通过严谨的设计哲学进行筛选与提炼，最终创造出的作品，绝非“生成”那么简单——而是真正的“设计”。
             </p>
           </motion.div>
 

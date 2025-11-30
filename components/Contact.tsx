@@ -27,10 +27,29 @@ export const Contact: React.FC = () => {
                   Currently available for freelance projects and collaborations. Drop me a line if you resonate with my philosophy.
                </p>
 
-               <div className="space-y-4">
+               <div className="space-y-6">
                   <a href="mailto:hello@komorebi.design" className="block font-serif text-2xl md:text-3xl text-stone-800 hover:text-wabi-clay transition-colors underline decoration-1 underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2 focus-visible:ring-offset-wabi-paper" aria-label="Send email to roclee24@163.com">
                      roclee24@163.com
                   </a>
+                  
+                  {/* 社交媒体链接 */}
+                  <div className="pt-4">
+                     <p className="text-xs uppercase tracking-widest text-stone-400 mb-4">Connect</p>
+                     <div className="flex gap-6">
+                        <a href="#" className="text-sm text-stone-600 hover:text-wabi-clay transition-colors flex items-center gap-2 group">
+                           <span>Twitter</span>
+                           <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                        <a href="#" className="text-sm text-stone-600 hover:text-wabi-clay transition-colors flex items-center gap-2 group">
+                           <span>Instagram</span>
+                           <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                        <a href="#" className="text-sm text-stone-600 hover:text-wabi-clay transition-colors flex items-center gap-2 group">
+                           <span>Facebook</span>
+                           <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                     </div>
+                  </div>
                </div>
             </div>
 

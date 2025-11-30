@@ -3,42 +3,49 @@
   font-family: 'Source Han Sans SC';
   font-style: normal;
   font-weight: 200;
+  font-display: swap;
   src: url('/fonts_cn/source-han-sans-sc-master/SourceHanSansSC-ExtraLight.otf') format('opentype');
 }
 @font-face {
   font-family: 'Source Han Sans SC';
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
   src: url('/fonts_cn/source-han-sans-sc-master/SourceHanSansSC-Light.otf') format('opentype');
 }
 @font-face {
   font-family: 'Source Han Sans SC';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('/fonts_cn/source-han-sans-sc-master/SourceHanSansSC-Regular.otf') format('opentype');
 }
 @font-face {
   font-family: 'Source Han Sans SC';
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
   src: url('/fonts_cn/source-han-sans-sc-master/SourceHanSansSC-Medium.otf') format('opentype');
 }
 @font-face {
   font-family: 'Source Han Sans SC';
   font-style: normal;
   font-weight: 600;
+  font-display: swap;
   src: url('/fonts_cn/source-han-sans-sc-master/SourceHanSansSC-Normal.otf') format('opentype');
 }
 @font-face {
   font-family: 'Source Han Sans SC';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url('/fonts_cn/source-han-sans-sc-master/SourceHanSansSC-Bold.otf') format('opentype');
 }
 @font-face {
   font-family: 'Source Han Sans SC';
   font-style: normal;
   font-weight: 800;
+  font-display: swap;
   src: url('/fonts_cn/source-han-sans-sc-master/SourceHanSansSC-Heavy.otf') format('opentype');
 }
 
@@ -47,35 +54,41 @@
   font-family: 'YuanLiu MingTi';
   font-style: normal;
   font-weight: 200;
+  font-display: swap;
   src: url('/fonts_cn/源流明体-ExtraLight/源流明体-ExtraLight.ttf') format('truetype');
 }
 @font-face {
   font-family: 'YuanLiu MingTi';
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
   src: url('/fonts_cn/源流明体-Light/源流明体-Light.ttf') format('truetype');
 }
 @font-face {
   font-family: 'YuanLiu MingTi';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('/fonts_cn/源流明体-Regular/源流明体-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'YuanLiu MingTi';
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
   src: url('/fonts_cn/源流明体-Medium/源流明体-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'YuanLiu MingTi';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url('/fonts_cn/源流明体-Bold/源流明体-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'YuanLiu MingTi';
   font-style: normal;
   font-weight: 800;
+  font-display: swap;
   src: url('/fonts_cn/源流明体-Heavy/源流明体-Heavy.ttf') format('truetype');
 }

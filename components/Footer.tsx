@@ -7,58 +7,55 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#FAFAFA] text-stone-900 border-t border-stone-200 font-sans">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pt-20 pb-10">
         {/* Top Info Section - 4 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-32">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-32"> */}
           {/* Column 1: Contact */}
-          <div className="space-y-8">
-            <h3 className="font-bold text-sm tracking-wide">Contact</h3>
-            <div className="space-y-1 text-sm leading-relaxed text-stone-600">
-              <p>MaBin</p>
-              <p>Beijing, China</p>
-            </div>
-            <div className="space-y-1 text-sm leading-relaxed pt-4 text-stone-600">
-              <p>hello@mabin.design</p>
-            </div>
-          </div>
+          {/* <div className="space-y-8"> */}
+            {/* <h3 className="font-bold text-sm tracking-wide">Contact</h3> */}
+            {/* <div className="space-y-1 text-sm leading-relaxed text-stone-600"> */}
+              {/* <p>MaBin</p> */}
+              {/* <p>Beijing, China</p> */}
+            {/* </div> */}
+            {/* <div className="space-y-1 text-sm leading-relaxed pt-4 text-stone-600"> */}
+              {/* <p>hello@mabin.design</p> */}
+            {/* </div> */}
+          {/* </div> */}
 
           {/* Column 2: Services */}
-          <div className="space-y-8">
-            <h3 className="font-bold text-sm tracking-wide">Services</h3>
-            <div className="space-y-4 text-sm leading-relaxed text-stone-600">
-              <p>AI Design</p>
-              <p>UI/UX Design</p>
-              <p>Brand Identity</p>
-              <p>WebGL Development</p>
-            </div>
-          </div>
+          {/* <div className="space-y-8"> */}
+            {/* <h3 className="font-bold text-sm tracking-wide">Services</h3> */}
+            {/* <div className="space-y-4 text-sm leading-relaxed text-stone-600"> */}
+              {/* <p>AI Design</p> */}
+              {/* <p>UI/UX Design</p> */}
+              {/* <p>Brand Identity</p> */}
+              {/* <p>WebGL Development</p> */}
+            {/* </div> */}
+          {/* </div> */}
 
           {/* Column 3: Philosophy */}
-          <div className="space-y-8">
-            <h3 className="font-bold text-sm tracking-wide">Philosophy</h3>
-            <div className="space-y-4 text-sm leading-relaxed text-stone-600">
-              <p>
-                Appreciating the beauty that is imperfect, impermanent, and incomplete.
-              </p>
-            </div>
-          </div>
+          {/* <div className="space-y-8"> */}
+            {/* <h3 className="font-bold text-sm tracking-wide">Philosophy</h3> */}
+            {/* <div className="space-y-4 text-sm leading-relaxed text-stone-600"> */}
+              {/* <p> */}
+                {/* Appreciating the beauty that is imperfect, impermanent, and incomplete. */}
+              {/* </p> */}
+            {/* </div> */}
+          {/* </div> */}
 
           {/* Column 4: Connect */}
-          <div className="space-y-8">
-            <h3 className="font-bold text-sm tracking-wide">Connect</h3>
-            <p className="text-sm leading-relaxed text-stone-600">
-              Always open to discussing new projects and creative collaborations.
-            </p>
-          </div>
-        </div>
+          {/* <div className="space-y-8"> */}
+            {/* <h3 className="font-bold text-sm tracking-wide">Connect</h3> */}
+            {/* <p className="text-sm leading-relaxed text-stone-600"> */}
+              {/* Always open to discussing new projects and creative collaborations. */}
+            {/* </p> */}
+          {/* </div> */}
+        {/* </div> */}
 
         {/* Middle Links Section */}
-        <div className="flex flex-wrap justify-between items-center text-xs font-bold mb-20">
-          <div className="flex gap-6 uppercase tracking-wider">
-            <a href="#" className="hover:text-stone-600 transition-colors">Twitter</a>
-            <a href="#" className="hover:text-stone-600 transition-colors">Instagram</a>
-            <a href="#" className="hover:text-stone-600 transition-colors">Facebook</a>
+        <div className="flex justify-between items-center text-xs font-bold mb-20">
+          <div className="text-stone-500 font-normal">
+            <span>©All Rights Reserved</span>
           </div>
           <div className="flex gap-6 text-stone-500 font-normal">
-            <span>©All Rights Reserved</span>
             <a href="#" className="hover:text-stone-900 transition-colors">Accessibility</a>
             <a href="#" className="hover:text-stone-900 transition-colors">Privacy Policy</a>
           </div>

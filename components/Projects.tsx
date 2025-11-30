@@ -180,8 +180,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick, onHover, onH
       />
 
       <ProjectSection
-        title="Visual Systems"
-        subtitle="Brand Identity / Typography"
+        title="Other Projects"
+        subtitle="AI tools / Photography / Concept design / Drawing"
         projects={IDENTITY_PROJECTS}
         onProjectClick={onProjectClick}
         onHover={onHover}
