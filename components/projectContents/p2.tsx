@@ -5,10 +5,11 @@ import { createFadeInUp, EASE_DEFAULT, DURATIONS } from '../../constants/animati
 
 const FADE_IN_UP = createFadeInUp();
 
-const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
+const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
   const sections = [
     { id: 'overview', label: 'Overview' },
     { id: 'concept', label: 'Concept' },
+    { id: 'features', label: 'Features' },
     { id: 'process', label: 'Process' },
     { id: 'gallery', label: 'Gallery' },
   ];
@@ -51,6 +52,10 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
               <h3 className="font-sans text-xs text-stone-400 uppercase tracking-widest mb-1">Year</h3>
               <p className="font-serif text-lg">{project.year}</p>
             </div>
+            <div>
+              <h3 className="font-sans text-xs text-stone-400 uppercase tracking-widest mb-1">Category</h3>
+              <p className="font-serif text-lg">{project.category}</p>
+            </div>
           </div>
         </div>
 
@@ -70,15 +75,15 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <p className="font-sans text-stone-600 leading-relaxed">
-              CHAGEE和萌友们的项目旨在创造一个充满活力和互动性的空间，将传统茶文化与现代元素相结合。我们通过色彩、材质和空间的巧妙运用，打造出一个既温馨又富有创意的环境。
+              Find & Spot 是一个创新的UI设计与AIGC结合的项目，旨在通过人工智能技术提升用户体验设计的效率和质量。我们探索了如何利用AI生成内容来辅助设计决策，创造出更加个性化和适应性强的用户界面。
             </p>
             <p className="font-sans text-stone-600 leading-relaxed">
-              设计灵感来源于茶文化的深厚底蕴和现代都市生活的快节奏。我们希望在这个空间中，人们可以放慢脚步，享受茶香，同时也能感受到现代设计的魅力。
+              项目的核心理念是将设计师的创意思维与AI的计算能力相结合，通过智能工具来扩展设计边界，同时保持人类设计师在创意决策中的主导地位。
             </p>
           </div>
           <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
             <img
-              src="/images/projects/p1-concept.jpg"
+              src="/images/projects/p2-concept.jpg"
               alt="Concept visualization"
               width={600}
               height={400}
@@ -90,20 +95,75 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
         </div>
       </div>
 
+      {/* Features Section */}
+      <div id="features" className="mb-20 scroll-mt-20">
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Key Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            variants={FADE_IN_UP}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.1 }}
+            className="p-8 border border-stone-200 rounded-2xl"
+          >
+            <h3 className="font-serif text-xl text-stone-800 mb-4">智能设计建议</h3>
+            <p className="font-sans text-stone-600 leading-relaxed">
+              基于用户行为和设计原则，AI系统能够实时提供设计建议，帮助设计师快速迭代和优化界面元素。
+            </p>
+          </motion.div>
+          <motion.div
+            variants={FADE_IN_UP}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+            className="p-8 border border-stone-200 rounded-2xl"
+          >
+            <h3 className="font-serif text-xl text-stone-800 mb-4">自适应界面生成</h3>
+            <p className="font-sans text-stone-600 leading-relaxed">
+              系统能够根据不同设备和用户偏好自动调整界面布局和样式，提供一致且个性化的用户体验。
+            </p>
+          </motion.div>
+          <motion.div
+            variants={FADE_IN_UP}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3 }}
+            className="p-8 border border-stone-200 rounded-2xl"
+          >
+            <h3 className="font-serif text-xl text-stone-800 mb-4">实时协作与反馈</h3>
+            <p className="font-sans text-stone-600 leading-relaxed">
+              设计师和AI系统之间实现无缝协作，AI能够理解设计意图并提供有针对性的反馈和改进建议。
+            </p>
+          </motion.div>
+          <motion.div
+            variants={FADE_IN_UP}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.4 }}
+            className="p-8 border border-stone-200 rounded-2xl"
+          >
+            <h3 className="font-serif text-xl text-stone-800 mb-4">设计模式学习</h3>
+            <p className="font-sans text-stone-600 leading-relaxed">
+              系统能够从大量优秀设计案例中学习，识别有效的设计模式，并将其应用到新的设计项目中。
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Process Section */}
       <div id="process" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Process</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Design Process</h2>
         <div className="space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="font-serif text-xl text-stone-800 mb-4">1. Research & Analysis</h3>
+              <h3 className="font-serif text-xl text-stone-800 mb-4">1. 用户研究与需求分析</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
-                我们深入研究了茶文化的历史和现代消费习惯，分析了目标用户的需求和期望。通过市场调研和用户访谈，我们确定了设计方向和关键元素。
+                我们深入研究了用户在使用UI设计工具时的痛点和需求，通过访谈和观察，确定了AI辅助设计的关键场景和价值点。
               </p>
             </div>
             <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p1-research.jpg"
+                src="/images/projects/p2-research.jpg"
                 alt="Research process"
                 width={600}
                 height={400}
@@ -117,7 +177,7 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p1-design.jpg"
+                src="/images/projects/p2-design.jpg"
                 alt="Design process"
                 width={600}
                 height={400}
@@ -127,10 +187,30 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h3 className="font-serif text-xl text-stone-800 mb-4">2. Design & Development</h3>
+              <h3 className="font-serif text-xl text-stone-800 mb-4">2. AI模型训练与优化</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
-                基于研究结果，我们创建了多个设计方案，并通过模型和渲染图进行可视化。设计团队与客户紧密合作，不断优化方案，确保最终设计既满足功能需求，又具有美学价值。
+                我们收集和标注了大量设计案例，训练了专门针对UI设计的AI模型，不断优化其生成建议的质量和相关性。
               </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="font-serif text-xl text-stone-800 mb-4">3. 原型开发与测试</h3>
+              <p className="font-sans text-stone-600 leading-relaxed">
+                我们开发了多个原型版本，通过用户测试和反馈迭代，确保AI辅助设计功能能够真正提升设计效率和质量。
+              </p>
+            </div>
+            <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
+              <img
+                src="/images/projects/p2-prototype.jpg"
+                alt="Prototype testing"
+                width={600}
+                height={400}
+                decoding="async"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -164,12 +244,13 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
 };
 
 // Assign id to the component for identification
-(P1Content as any).id = 'p1';
-(P1Content as any).sections = [
+(P2Content as any).id = 'p2';
+(P2Content as any).sections = [
   { id: 'overview', label: 'Overview' },
   { id: 'concept', label: 'Concept' },
+  { id: 'features', label: 'Features' },
   { id: 'process', label: 'Process' },
   { id: 'gallery', label: 'Gallery' },
 ];
 
-export default P1Content;
+export default P2Content;
