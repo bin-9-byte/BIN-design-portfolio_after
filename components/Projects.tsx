@@ -6,17 +6,9 @@ import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { FADE_IN_RIGHT, EASE_DEFAULT, DURATIONS } from '../constants/animations';
 import { zIndex } from "../constants/zIndex";
 
-const SPATIAL_PROJECTS = PROJECTS.filter(p =>
-  ['Architecture', 'Interior Design', 'Landscape'].includes(p.category)
-);
-
-const PRODUCT_PROJECTS = PROJECTS.filter(p =>
-  p.category === 'Product Design'
-);
-
-const IDENTITY_PROJECTS = PROJECTS.filter(p =>
-  p.category === 'Brand Identity'
-);
+const SPATIAL_PROJECTS = PROJECTS.filter(p => p.group === 'spatial');
+const PRODUCT_PROJECTS = PROJECTS.filter(p => p.group === 'product');
+const IDENTITY_PROJECTS = PROJECTS.filter(p => p.group === 'identity');
 
 const SCROLL_BUTTON_BASE = "hidden md:flex absolute z-20 p-2 rounded-full shadow-sm transition-all duration-500 opacity-0 group-hover:opacity-100 active:scale-95";
 const SCROLL_BUTTON_THEME = "bg-wabi-paper/90 backdrop-blur-sm border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-wabi-paper hover:border-stone-300";

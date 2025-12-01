@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Profile } from './components/Profile';
@@ -27,6 +27,13 @@ const App: React.FC = () => {
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Ensure initial load starts at the top when no hash is present
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, []);
 
   return (
     <div className="relative w-full min-h-screen overflow-x-hidden selection:bg-wabi-clay selection:text-white bg-wabi-paper bg-noise">

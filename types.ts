@@ -4,6 +4,7 @@ export interface Project {
   id: string;
   title: string;
   category: string;
+  group: 'spatial' | 'product' | 'identity';
   thumbnailUrl: string;
   images: string[];
   description: string;
