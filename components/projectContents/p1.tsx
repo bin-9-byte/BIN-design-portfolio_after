@@ -95,24 +95,16 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
       <div id="process" className="mb-20 scroll-mt-20">
         <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Process</h2>
         <div className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="font-serif text-xl text-stone-800 mb-4">1. Research & Analysis</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                我们深入研究了茶文化的历史和现代消费习惯，分析了目标用户的需求和期望。通过市场调研和用户访谈，我们确定了设计方向和关键元素。
-              </p>
-            </div>
-            <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p1-research.jpg"
-                alt="Research process"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
+            <img
+              src="/images/projects/p1-research.png"
+              alt="Research process"
+              width={1200}
+              height={900}
+              decoding="async"
+              loading="lazy"
+              className="w-full h-auto object-cover"
+            />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -128,7 +120,7 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h3 className="font-serif text-xl text-stone-800 mb-4">2. Design & Development</h3>
+              <h3 className="font-serif text-xl text-stone-800 mb-4">1. Design & Development</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
                 基于研究结果，我们创建了多个设计方案，并通过模型和渲染图进行可视化。设计团队与客户紧密合作，不断优化方案，确保最终设计既满足功能需求，又具有美学价值。
               </p>
