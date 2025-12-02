@@ -14,11 +14,20 @@ export const PROJECTS: Project[] = [
     category: 'style & workflow optimization',
     group: 'spatial',
     thumbnailUrl: '/images/projects/p1-thumbnail.png',
-    images: ['/images/projects/p1-0.jpg', '/images/projects/p1-1.jpg', '/images/projects/p1-2.jpg'],
+    images: [
+      { src: '/images/projects/p1-0.png', name: '萌友-66' }, 
+      { src: '/images/projects/p1-1.png', name: '萌友-kuku' }, 
+      { src: '/images/projects/p1-2.png', name: '萌友-33 一娃 小5 腊八' }, 
+      { src: '/images/projects/p1-3.png', name: '萌友-nini' }, 
+      { src: '/images/projects/p1-4.png', name: '萌友-lucky' }, 
+      { src: '/images/projects/p1-5.png', name: '萌友-肉桂' }, 
+      { src: '/images/projects/p1-6.png', name: '萌友-urus' }, 
+      { src: '/images/projects/p1-7.png', name: '萌友-coconut' }
+    ],
     description: '在小程序上线宠物季DIY专属宠物杯的活动，需要AIGC实现宠物风格化，提供了目标风格图片。主要负责整个流程搭建，风格调试，批量验证。',
     year: '2025',
-    role: 'Lead Architect',
-    client: 'Private Residence'
+    role: 'AI Designer',
+    client: 'CHAGEE'
   },
   {
     id: 'p2',
