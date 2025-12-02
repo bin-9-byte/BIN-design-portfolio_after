@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ProjectContentProps } from './ProjectContent';
 import { createFadeInUp, EASE_DEFAULT, DURATIONS } from '../../constants/animations';
+import { getImageMeta } from '../utils/imageMeta';
 
 const FADE_IN_UP = createFadeInUp();
 
@@ -254,29 +255,35 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
       <div id="gallery" className="space-y-12 scroll-mt-20">
         <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Gallery</h2>
         <div className="space-y-8">
-          {project.images.map((img, idx) => (
-            <motion.div
-              key={idx}
-              className="relative overflow-hidden rounded-2xl"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: DURATIONS.medium, 
-                ease: EASE_DEFAULT,
-                delay: idx * 0.1 
-              }}
-            >
-              <img 
-                src={img} 
-                alt={`${project.title} detail ${idx}`} 
-                width={800} 
-                height={600} 
-                decoding="async" 
-                loading="lazy" 
-                className="w-full h-auto object-cover" 
-              />
-            </motion.div>
-          ))}
+          {project.images.map((img, idx) => {
+            const meta = getImageMeta(img as any, project as any, idx);
+            return (
+              <motion.div
+                key={idx}
+                className="group relative overflow-hidden rounded-2xl"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: idx * 0.1 
+                }}
+              >
+                <img 
+                  src={meta.src} 
+                  alt={meta.name} 
+                  width={800} 
+                  height={600} 
+                  decoding="async" 
+                  loading="lazy" 
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]" 
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">{meta.name}</span>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </>

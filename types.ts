@@ -6,12 +6,17 @@ export interface Project {
   category: string;
   group: 'spatial' | 'product' | 'identity';
   thumbnailUrl: string;
-  images: string[];
+  images: (string | ImageItem)[];
   description: string;
   year: string;
   client?: string;
   role?: string;
 }
+
+export type ImageItem = {
+  src: string;
+  name?: string;
+};
 
 export type ViewState = 'HOME' | 'PROJECT_DETAIL';
 
