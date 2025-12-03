@@ -9,8 +9,8 @@ const FADE_IN_UP = createFadeInUp();
 const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
   const sections = [
     { id: 'overview', label: 'Overview' },
-    { id: 'concept', label: 'Concept' },
-    { id: 'character', label: 'Character Design' },
+    { id: 'pre-training', label: 'Pre-training' },
+    { id: 'model-effect', label: 'Model Effect' },
     { id: 'process', label: 'Process' },
     { id: 'gallery', label: 'Gallery' },
   ];
@@ -71,36 +71,24 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
       </div>
 
       {/* Concept Section */}
-      <div id="concept" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Concept</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              筑梦岛是一个充满梦幻色彩的乙女风格3D角色模型项目。灵感来源于日本少女漫画和游戏中的经典角色形象，融合了现代3D建模技术与传统乙女美学，创造出既甜美又富有故事性的虚拟角色。
-            </p>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              项目探索了如何在3D空间中表达乙女风格的细腻情感和丰富层次，通过服装设计、色彩搭配和表情刻画，构建了一个完整的角色世界观和视觉语言体系。
-            </p>
-          </div>
-          <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-            <img
-              src="/images/projects/p4-concept.jpg"
-              alt="Concept visualization"
-              width={600}
-              height={400}
-              decoding="async"
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-          </div>
+      <div id="pre-training" className="mb-20 scroll-mt-20">
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Pre-training Preparation</h2>
+        <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
+          <img
+            src="/images/projects/p4-concept.png"
+            alt="Concept visualization"
+            decoding="async"
+            loading="lazy"
+            className="w-full h-auto object-contain"
+          />
         </div>
       </div>
 
       {/* Character Design Section */}
-      <div id="character" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Character Design</h2>
+      <div id="model-effect" className="mb-20 scroll-mt-20">
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Model Effect Comparison</h2>
         <div className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
               variants={FADE_IN_UP}
               initial="hidden"
@@ -108,18 +96,16 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
               transition={{ delay: 0.1 }}
               className="space-y-4"
             >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
+              <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
                 <img
-                  src="/images/projects/p4-character-1.jpg"
+                  src="/images/projects/p4-character-1.png"
                   alt="Character design - face"
-                  width={400}
-                  height={400}
                   decoding="async"
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
-              <h3 className="font-serif text-xl text-stone-800">面部设计</h3>
+              <h3 className="font-serif text-xl text-stone-800">动漫1.3.1</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
                 精心设计的大眼睛和柔和面部轮廓，采用细腻的皮肤材质和渐变色彩，体现乙女风格特有的纯真与梦幻感。
               </p>
@@ -132,44 +118,18 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
               transition={{ delay: 0.2 }}
               className="space-y-4"
             >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
+              <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
                 <img
-                  src="/images/projects/p4-character-2.jpg"
+                  src="/images/projects/p4-character-2.png"
                   alt="Character design - costume"
-                  width={400}
-                  height={400}
                   decoding="async"
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
-              <h3 className="font-serif text-xl text-stone-800">服装设计</h3>
+              <h3 className="font-serif text-xl text-stone-800">动漫1.3.1 + Lora模型</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
-                融合洛丽塔和学院风元素的服装设计，采用多层次剪裁和丰富的装饰细节，强调角色的可爱与优雅气质。
-              </p>
-            </motion.div>
-            
-            <motion.div
-              variants={FADE_IN_UP}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.3 }}
-              className="space-y-4"
-            >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/projects/p4-character-3.jpg"
-                  alt="Character design - accessories"
-                  width={400}
-                  height={400}
-                  decoding="async"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="font-serif text-xl text-stone-800">配饰设计</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                精致的发饰、胸针和小包等配饰，采用珍珠、蕾丝和蝴蝶结等元素，强化角色的乙女风格特征。
+                相同的提示词，更厚重的笔触，更强烈的光影，更柔和的线条，更张扬的气质，更细腻的细节，氛围暧昧、神秘且有张力。
               </p>
             </motion.div>
           </div>
@@ -178,99 +138,223 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
 
       {/* Process Section */}
       <div id="process" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Creation Process</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Version Iterating</h2>
         <div className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="font-serif text-xl text-stone-800 mb-4">1. 概念草图</h3>
-              <p className="font-sans text-stone-600 leading-relaxed mb-4">
-                项目始于大量的概念草图和角色设定，我们研究了多种乙女风格作品，确定了角色的基本形象、性格特点和视觉风格。
-              </p>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                通过多轮迭代，我们完善了角色的比例、表情和姿态，为3D建模奠定了基础。
-              </p>
+          <motion.div
+            variants={FADE_IN_UP}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.1 }}
+            className="space-y-4"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <motion.div
+                className="group relative overflow-hidden rounded-2xl bg-stone-200"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: 0.1 
+                }}
+              >
+                <img
+                  src="/images/projects/p4-process-1-1.png"
+                  alt="Concept sketches"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">V2版本</span>
+                </div>
+              </motion.div>
+              <motion.div
+                className="group relative overflow-hidden rounded-2xl bg-stone-200"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: 0.15 
+                }}
+              >
+                <img
+                  src="/images/projects/p4-process-1-2.png"
+                  alt="Concept sketches"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">V3版本</span>
+                </div>
+              </motion.div>
+              <motion.div
+                className="group relative overflow-hidden rounded-2xl bg-stone-200"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: 0.2 
+                }}
+              >
+                <img
+                  src="/images/projects/p4-process-1-3.png"
+                  alt="Concept sketches"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">V4版本</span>
+                </div>
+              </motion.div>
             </div>
-            <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p4-process-1.jpg"
-                alt="Concept sketches"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+            <h3 className="font-serif text-xl text-stone-800">Model V2 — V4</h3>
+            <p className="font-sans text-stone-600 leading-relaxed">
+              摸索风格与调试参数阶段，快速训练得到效果，根据效果优化训练集、打标文件，构建优质且风格准确的训练训练集，迭代记录最优参数，摸索出符合乙女风格的参数配置。
+            </p>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p4-process-2.jpg"
-                alt="3D modeling process"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+          <motion.div
+            variants={FADE_IN_UP}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+            className="space-y-4"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <motion.div
+                className="group relative overflow-hidden rounded-2xl bg-stone-200"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: 0.2 
+                }}
+              >
+                <img
+                  src="/images/projects/p4-process-2-1.png"
+                  alt="3D modeling process"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">V5版本</span>
+                </div>
+              </motion.div>
+              <motion.div
+                className="group relative overflow-hidden rounded-2xl bg-stone-200"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: 0.25 
+                }}
+              >
+                <img
+                  src="/images/projects/p4-process-2-2.png"
+                  alt="3D modeling process"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">V5版本</span>
+                </div>
+              </motion.div>
+              <motion.div
+                className="group relative overflow-hidden rounded-2xl bg-stone-200"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: 0.3 
+                }}
+              >
+                <img
+                  src="/images/projects/p4-process-2-3.png"
+                  alt="3D modeling process"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">V5版本</span>
+                </div>
+              </motion.div>
             </div>
-            <div className="order-1 md:order-2">
-              <h3 className="font-serif text-xl text-stone-800 mb-4">2. 3D建模</h3>
-              <p className="font-sans text-stone-600 leading-relaxed mb-4">
-                使用ZBrush和Blender进行高精度建模，我们注重角色的面部表情和身体曲线，确保模型符合乙女风格的审美标准。
-              </p>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                建模过程中特别关注头发和服装的流动感，通过精细的拓扑结构为后续的绑定和动画做好准备。
-              </p>
-            </div>
-          </div>
+            <h3 className="font-serif text-xl text-stone-800">Model V5</h3>
+            <p className="font-sans text-stone-600 leading-relaxed">
+              根据前期得到的效果以及客户反馈，进一步提升风格泛化性、稳定性，增加厚涂风格。使用同一个Lora模型，可以通过不同触发词触发不同风格。客户确认效果，进入上线交付阶段。
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="font-serif text-xl text-stone-800 mb-4">3. 材质与纹理</h3>
-              <p className="font-sans text-stone-600 leading-relaxed mb-4">
-                我们为角色设计了丰富的材质和纹理，包括细腻的皮肤材质、柔软的布料纹理和闪亮的配饰材质。
-              </p>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                通过Substance Painter绘制纹理贴图，我们实现了服装上的蕾丝图案、刺绣细节和渐变色彩效果。
-              </p>
+          <motion.div
+            variants={FADE_IN_UP}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3 }}
+            className="space-y-4"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <motion.div
+                className="group relative overflow-hidden rounded-2xl bg-stone-200"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: 0.3 
+                }}
+              >
+                <img
+                  src="/images/projects/p4-process-3-1.png"
+                  alt="Texture and material work"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">V6版本 - 眼部细节提升</span>
+                </div>
+              </motion.div>
+              <motion.div
+                className="group relative overflow-hidden rounded-2xl bg-stone-200"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: DURATIONS.medium, 
+                  ease: EASE_DEFAULT,
+                  delay: 0.35 
+                }}
+              >
+                <img
+                  src="/images/projects/p4-process-3-2.png"
+                  alt="Texture and material work"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">V7版本 - 大模型训练</span>
+                </div>
+              </motion.div>
             </div>
-            <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p4-process-3.jpg"
-                alt="Texture and material work"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+            <h3 className="font-serif text-xl text-stone-800">Model V6 & 大模型</h3>
+            <p className="font-sans text-stone-600 leading-relaxed">
+              上线后收集用户反馈继续迭代至V6版本-当前线上版本，提升眼部细节，增加pale_skin苍白皮肤控制力。<br />
+              为增加更多乙女风格、元素和玩法，收集更多训练集着手训练大模型，迭代至V7版本，内部自驱训练，暂未上线。
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p4-process-4.jpg"
-                alt="Rendering and post-processing"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h3 className="font-serif text-xl text-stone-800 mb-4">4. 渲染与后期</h3>
-              <p className="font-sans text-stone-600 leading-relaxed mb-4">
-                使用Cycles渲染器进行最终渲染，我们精心设计了光照方案，突出角色的立体感和材质细节。
-              </p>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                通过后期处理，我们增强了色彩饱和度和对比度，添加了柔和的光晕效果，使画面更加梦幻和富有情感。
-              </p>
-            </div>
-          </div>
+
         </div>
       </div>
 
@@ -317,9 +401,9 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
 (P4Content as any).id = 'p4';
 (P4Content as any).sections = [
   { id: 'overview', label: 'Overview' },
-  { id: 'concept', label: 'Concept' },
-  { id: 'character', label: 'Character Design' },
-  { id: 'process', label: 'Process' },
+  { id: 'pre-training', label: 'Pre-training' },
+  { id: 'model-effect', label: 'Model Effect' },
+  { id: 'process', label: 'Version Iterating' },
   { id: 'gallery', label: 'Gallery' },
 ];
 

@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { FADE_IN_RIGHT, EASE_DEFAULT, DURATIONS } from '../constants/animations';
 import { zIndex } from "../constants/zIndex";
+import { ScrollHint } from './ui/ScrollHint';
 
 const SPATIAL_PROJECTS = PROJECTS.filter(p => p.group === 'spatial');
 const PRODUCT_PROJECTS = PROJECTS.filter(p => p.group === 'product');
@@ -140,6 +141,9 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
 
           <div className="w-12 flex-shrink-0" />
         </div>
+
+        {/* Mobile scroll hint - only visible on mobile devices */}
+        <ScrollHint containerRef={containerRef} />
       </div>
     </div>
   );
