@@ -60,10 +60,10 @@ export const PROJECTS: Project[] = [
     group: 'spatial',
     thumbnailUrl: '/images/projects/p4-thumbnail.png',
     images: ['/images/projects/p4-0.jpg', '/images/projects/p4-1.jpg'],
-    description: 'An urban sanctuary designed to age gracefully. The selection of flora emphasizes seasonal decay and renewal.',
+    description: '筑梦岛APP希望在AI虚拟角色设定的玩法内上线乙女（女性向）人像风格，现有动漫1.3.1模型文生图的乙女风格效果较单一，无法满足客户对乙女风格的需求，因此选择定制训练乙女风格Lora模型，以增强动漫1.3.1模型的乙女风格化效果。',
     year: '2024',
-    role: 'Landscape Architect',
-    client: 'City Arts Council'
+    role: 'AI Designer',
+    client: '筑梦岛'
   },
    {
     id: 'p5',
