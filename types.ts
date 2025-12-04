@@ -16,6 +16,7 @@ export interface Project {
 export type ImageItem = {
   src: string;
   name?: string;
+  poster?: string;
 };
 
 export type ViewState = 'HOME' | 'PROJECT_DETAIL';

@@ -292,15 +292,27 @@ const P6Content: React.FC<ProjectContentProps> = ({ project }) => {
                   delay: idx * 0.1 
                 }}
               >
-                <img 
-                  src={meta.src} 
-                  alt={meta.name} 
-                  width={800} 
-                  height={600} 
-                  decoding="async" 
-                  loading="lazy" 
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]" 
-                />
+                {meta.isVideo ? (
+                  <video
+                    src={meta.src}
+                    poster={meta.poster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={meta.name}
+                    className="w-full h-auto object-cover"
+                  />
+                ) : (
+                  <img 
+                    src={meta.src} 
+                    alt={meta.name} 
+                    width={800} 
+                    height={600} 
+                    decoding="async" 
+                    loading="lazy" 
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]" 
+                  />
+                )}
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
                   <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">{meta.name}</span>
                 </div>

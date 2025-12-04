@@ -59,23 +59,29 @@ export const PROJECTS: Project[] = [
     category: 'lora train',
     group: 'spatial',
     thumbnailUrl: '/images/projects/p4-thumbnail.png',
-    images: ['/images/projects/p4-0.jpg', '/images/projects/p4-1.jpg'],
+    images: [
+      { src: '/images/projects/p4-0.png', name: '线上应用效果' }, 
+      { src: '/images/projects/p4-1.png', name: '更多风格' }, 
+      { src: '/images/projects/p4-2.png', name: '更多风格' },
+    ],
     description: '筑梦岛APP希望在AI虚拟角色设定的玩法内上线乙女（女性向）人像风格，现有动漫1.3.1模型文生图的乙女风格效果较单一，无法满足客户对乙女风格的需求，因此选择定制训练乙女风格Lora模型，以增强动漫1.3.1模型的乙女风格化效果。',
     year: '2024',
     role: 'AI Designer',
     client: '筑梦岛'
   },
-   {
+  {
     id: 'p5',
-    title: 'SAMSUNG 儿童Portrait',
-    category: 'comfyui workflow',
+    title: 'SAMSUNG 绘图助手',
+    category: 'Comfyui workflow',
     group: 'spatial',
     thumbnailUrl: '/images/projects/p5-thumbnail.png',
-    images: ['/images/projects/p5-0.jpg', '/images/projects/p5-1.jpg'],
-    description: 'A gallery space designed to disappear, allowing the art to take center stage. Minimalist structures with maximum impact.',
-    year: '2025',
-    role: 'Architect',
-    client: 'Modern Art Foundation'
+    images: [
+      { src: '/images/projects/p5-0.mp4', name: '发布会展示视频', poster: '/images/projects/p5-0-poster.png' }
+    ],
+    description: '三星打造AI绘图助手功能，选择文生图、图生图、涂鸦生图以及儿童portrait功能在新机型上线，在这个项目周期内负责调试风格效果，为不同场景选择合适的模型，并调试优化prompt。',
+    year: '2024',
+    role: 'AI Designer',
+    client: 'SAMSUNG'
   },
   {
     id: 'p6',

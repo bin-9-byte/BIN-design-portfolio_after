@@ -195,16 +195,27 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
       <div id="gallery" className="space-y-12 scroll-mt-20">
         <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Gallery</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-          {project.images.map((img, idx) => {
-            const meta = getImageMeta(img as any, project as any, idx);
-            return (
-              <motion.div
-                key={idx}
-                className="group relative w-full overflow-hidden rounded-2xl"
-                initial={{ opacity: 0, clipPath: 'inset(100% 0% 0% 0%)' }}
-                animate={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
-                transition={{ duration: DURATIONS.slow, ease: EASE_DEFAULT }}
-              >
+        {project.images.map((img, idx) => {
+          const meta = getImageMeta(img as any, project as any, idx);
+          return (
+            <motion.div
+              key={idx}
+              className="group relative w-full overflow-hidden rounded-2xl"
+              initial={{ opacity: 0, clipPath: 'inset(100% 0% 0% 0%)' }}
+              animate={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
+              transition={{ duration: DURATIONS.slow, ease: EASE_DEFAULT }}
+            >
+              {meta.isVideo ? (
+                <video
+                  src={meta.src}
+                  poster={meta.poster}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label={meta.name}
+                  className="w-full h-auto object-cover"
+                />
+              ) : (
                 <img 
                   src={meta.src} 
                   alt={meta.name} 
@@ -212,14 +223,15 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
                   height={900} 
                   decoding="async" 
                   loading="lazy" 
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]" 
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
-                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">{meta.name}</span>
-                </div>
-              </motion.div>
-            );
-          })}
+              )}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+                <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">{meta.name}</span>
+              </div>
+            </motion.div>
+          );
+        })}
         </div>
       </div>
     </>

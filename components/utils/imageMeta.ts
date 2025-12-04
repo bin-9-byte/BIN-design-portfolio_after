@@ -19,16 +19,13 @@ export function getImageMeta(
   img: string | ImageItem,
   project: Project,
   idx: number
-): { src: string; name: string } {
-  if (typeof img === 'string') {
-    const file = basename(img);
-    const friendly = humanizeFromFilename(file, idx);
-    return { src: img, name: `${project.title} – ${friendly}` };
-  }
-  const src = img.src;
+): { src: string; name: string; isVideo: boolean; poster?: string } {
+  const toSrc = (v: string | ImageItem) => (typeof v === 'string' ? v : v.src);
+  const src = toSrc(img);
   const base = basename(src);
   const friendly = humanizeFromFilename(base, idx);
-  const name = img.name ? img.name : `${project.title} – ${friendly}`;
-  return { src, name };
+  const name = typeof img === 'object' && img.name ? img.name : `${project.title} – ${friendly}`;
+  const poster = typeof img === 'object' ? img.poster : undefined;
+  const isVideo = /\.(mp4|webm|mov)$/i.test(src);
+  return { src, name, isVideo, poster };
 }
-
