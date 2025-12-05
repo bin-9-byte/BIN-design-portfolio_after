@@ -37,9 +37,9 @@ export const PROJECTS: Project[] = [
     thumbnailUrl: '/images/projects/p2-thumbnail.png',
     images: ['/images/projects/p2-0.jpg', '/images/projects/p2-1.jpg'],
     description: 'A collection of ceramic tableware celebrating the imperfections of hand-molding. Each piece is unique, reflecting the wabi-sabi philosophy.',
-    year: '2025',
-    role: 'Product Designer',
-    client: 'Kiki Ceramics'
+    year: '2024',
+    role: 'UI Designer',
+    client: 'Amber Moblie'
   },
   {
     id: 'p3',

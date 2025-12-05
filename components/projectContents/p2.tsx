@@ -9,9 +9,9 @@ const FADE_IN_UP = createFadeInUp();
 const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
   const sections = [
     { id: 'overview', label: 'Overview' },
-    { id: 'concept', label: 'Concept' },
-    { id: 'features', label: 'Features' },
-    { id: 'process', label: 'Process' },
+    { id: 'concept', label: 'IP Details' },
+    { id: 'features', label: 'Activity Theme' },
+    { id: 'process', label: 'UI Design' },
     { id: 'gallery', label: 'Gallery' },
   ];
 
@@ -70,10 +70,10 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
         </div>
       </div>
 
-      {/* Concept Section */}
+      {/* IP Details Section */}
       <div id="concept" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Concept</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">IP Details</h2>
+        <div className="space-y-8">
           <div>
             <p className="font-sans text-stone-600 leading-relaxed">
               Find & Spot 是一个创新的UI设计与AIGC结合的项目，旨在通过人工智能技术提升用户体验设计的效率和质量。我们探索了如何利用AI生成内容来辅助设计决策，创造出更加个性化和适应性强的用户界面。
@@ -82,15 +82,15 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
               项目的核心理念是将设计师的创意思维与AI的计算能力相结合，通过智能工具来扩展设计边界，同时保持人类设计师在创意决策中的主导地位。
             </p>
           </div>
-          <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
+          <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
             <img
-              src="/images/projects/p2-concept.jpg"
+              src="/images/projects/p2-concept.png"
               alt="Concept visualization"
               width={600}
               height={400}
               decoding="async"
               loading="lazy"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-cover"
             />
           </div>
         </div>
@@ -98,7 +98,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
 
       {/* Features Section */}
       <div id="features" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Key Features</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Activity Theme</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
             variants={FADE_IN_UP}
@@ -153,7 +153,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
 
       {/* Process Section */}
       <div id="process" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Design Process</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">UI Design</h2>
         <div className="space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
@@ -266,9 +266,9 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
 (P2Content as any).id = 'p2';
 (P2Content as any).sections = [
   { id: 'overview', label: 'Overview' },
-  { id: 'concept', label: 'Concept' },
-  { id: 'features', label: 'Features' },
-  { id: 'process', label: 'Process' },
+  { id: 'concept', label: 'IP Details' },
+  { id: 'features', label: 'Activity Theme' },
+  { id: 'process', label: 'UI Design' },
   { id: 'gallery', label: 'Gallery' },
 ];
 
