@@ -52,7 +52,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
           <h3 className="font-serif text-3xl md:text-4xl text-stone-800 mb-2">{title}</h3>
           <p className="font-sans text-stone-500 text-sm tracking-wide uppercase">{subtitle}</p>
         </div>
-        <div className="hidden md:flex gap-2 items-center text-stone-400 text-xs uppercase tracking-widest" style={{ willChange: 'opacity, transform' }}>
+        <div className="hidden md:flex gap-2 items-center text-stone-400 text-xs uppercase tracking-widest">
           <span>Scroll</span> <ArrowRight size={14} />
         </div>
       </div>
@@ -61,7 +61,6 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
         <button
           onClick={() => scroll('left')}
           className={`${SCROLL_BUTTON_BASE} ${SCROLL_BUTTON_THEME} left-8 ${SCROLL_BUTTON_VERTICAL_POSITION} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2`}
-          style={{ willChange: 'opacity, transform' }}
           aria-label="Scroll left"
         >
           <ArrowLeft size={24} />
@@ -70,7 +69,6 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
         <button
           onClick={() => scroll('right')}
           className={`${SCROLL_BUTTON_BASE} ${SCROLL_BUTTON_THEME} right-8 ${SCROLL_BUTTON_VERTICAL_POSITION} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wabi-clay focus-visible:ring-offset-2`}
-          style={{ willChange: 'opacity, transform' }}
           aria-label="Scroll right"
         >
           <ArrowRight size={24} />
@@ -119,7 +117,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
                   className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
                   style={{ willChange: 'transform' }}
                 />
-                <div className="absolute inset-0" style={{ willChange: 'transform, opacity' }}>
+                <div className="absolute inset-0">
                   <div className="absolute inset-0 bg-stone-900/0 group-hover/card:bg-stone-900/10 transition-colors duration-500" />
                   <div className="absolute -inset-[15%] bg-gradient-to-br from-stone-900/0 to-stone-900/10 opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform group-hover/card:translate-x-0 group-hover/card:translate-y-0 -translate-x-4 -translate-y-4" />
                 </div>

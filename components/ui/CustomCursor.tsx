@@ -1,4 +1,4 @@
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { motion, useSpring, useMotionValue, useReducedMotion } from "framer-motion";
 import { EASE_DEFAULT, DURATIONS } from "../../constants/animations";
 import { useEffect } from "react";
 import { zIndex } from "../../constants/zIndex";
@@ -11,6 +11,11 @@ interface CustomCursorProps {
 export const CustomCursor: React.FC<CustomCursorProps> = ({ text, isHoveringBlock }) => {
   // 粗指针设备（触控）降级：不渲染自定义光标
   if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(pointer: coarse)').matches) {
+    return null;
+  }
+  // 用户偏好：减少动效时也不渲染自定义光标
+  const reduce = useReducedMotion();
+  if (reduce) {
     return null;
   }
   const mouseX = useMotionValue(-100);

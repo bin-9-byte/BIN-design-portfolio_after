@@ -8,6 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/fonts/fonts.css" />
   <link rel="stylesheet" href="/fonts/fonts_cn.css" />
+  <!-- 预加载首屏关键字体，提升首屏文字稳定性 -->
+  <link rel="preload" href="/fonts/static/CormorantGaramond-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/static/Montserrat-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <script>
     // Prevent browser restoring previous scroll position on initial load
     try {
