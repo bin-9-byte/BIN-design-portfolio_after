@@ -10,7 +10,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
   const sections = [
     { id: 'overview', label: 'Overview' },
     { id: 'concept', label: 'IP Details' },
-    { id: 'features', label: 'Activity Theme' },
+    { id: 'features', label: 'Activity Pop-up' },
     { id: 'process', label: 'UI Design' },
     { id: 'gallery', label: 'Gallery' },
   ];
@@ -98,56 +98,15 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
 
       {/* Features Section */}
       <div id="features" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Activity Theme</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div
-            variants={FADE_IN_UP}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.1 }}
-            className="p-8 border border-stone-200 rounded-2xl"
-          >
-            <h3 className="font-serif text-xl text-stone-800 mb-4">智能设计建议</h3>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              基于用户行为和设计原则，AI系统能够实时提供设计建议，帮助设计师快速迭代和优化界面元素。
-            </p>
-          </motion.div>
-          <motion.div
-            variants={FADE_IN_UP}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.2 }}
-            className="p-8 border border-stone-200 rounded-2xl"
-          >
-            <h3 className="font-serif text-xl text-stone-800 mb-4">自适应界面生成</h3>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              系统能够根据不同设备和用户偏好自动调整界面布局和样式，提供一致且个性化的用户体验。
-            </p>
-          </motion.div>
-          <motion.div
-            variants={FADE_IN_UP}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.3 }}
-            className="p-8 border border-stone-200 rounded-2xl"
-          >
-            <h3 className="font-serif text-xl text-stone-800 mb-4">实时协作与反馈</h3>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              设计师和AI系统之间实现无缝协作，AI能够理解设计意图并提供有针对性的反馈和改进建议。
-            </p>
-          </motion.div>
-          <motion.div
-            variants={FADE_IN_UP}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.4 }}
-            className="p-8 border border-stone-200 rounded-2xl"
-          >
-            <h3 className="font-serif text-xl text-stone-800 mb-4">设计模式学习</h3>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              系统能够从大量优秀设计案例中学习，识别有效的设计模式，并将其应用到新的设计项目中。
-            </p>
-          </motion.div>
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Activity Pop-up</h2>
+        <div className="w-full rounded-2xl overflow-hidden">
+          <img
+            src="/images/projects/p2-features.png"
+            alt="Activity Pop-up visualization"
+            decoding="async"
+            loading="lazy"
+            className="w-full h-auto object-cover"
+          />
         </div>
       </div>
 
@@ -155,63 +114,58 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
       <div id="process" className="mb-20 scroll-mt-20">
         <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">UI Design</h2>
         <div className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="space-y-8">
             <div>
-              <h3 className="font-serif text-xl text-stone-800 mb-4">1. 用户研究与需求分析</h3>
+              <h3 className="font-serif text-xl text-stone-800 mb-4">1. Button Design</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
-                我们深入研究了用户在使用UI设计工具时的痛点和需求，通过访谈和观察，确定了AI辅助设计的关键场景和价值点。
+                搭配主题图标设计BUTTON，在BUTTON安全区内绘制，适当增加元素，保证风格统一、元素协调。
               </p>
             </div>
-            <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p2-research.jpg"
+                src="/images/projects/p2-button.png"
                 alt="Research process"
                 width={600}
                 height={400}
                 decoding="async"
                 loading="lazy"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p2-design.jpg"
-                alt="Design process"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h3 className="font-serif text-xl text-stone-800 mb-4">2. AI模型训练与优化</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                我们收集和标注了大量设计案例，训练了专门针对UI设计的AI模型，不断优化其生成建议的质量和相关性。
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="space-y-8">
             <div>
-              <h3 className="font-serif text-xl text-stone-800 mb-4">3. 原型开发与测试</h3>
+              <h3 className="font-serif text-xl text-stone-800 mb-4">2. Icon Design</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
-                我们开发了多个原型版本，通过用户测试和反馈迭代，确保AI辅助设计功能能够真正提升设计效率和质量。
+                使用PS板绘，内容区的图标设计采用简洁欧美卡通风，保留立体感与辨识度，根据节日活动主题构思元素，帮助用户快速get活动主题。
               </p>
             </div>
-            <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p2-prototype.jpg"
-                alt="Prototype testing"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+            <div className="w-full rounded-2xl overflow-hidden p-4">
+              <div className="grid grid-cols-4 gap-4">
+                {/* 16张不同的图片，分四行显示 */}
+                {[...Array(16)].map((_, index) => {
+                  // 使用p2-icon-1到p2-icon-16的图片
+                  const getImageSrc = (idx: number) => {
+                    // 索引从0开始，所以需要+1
+                    return `/images/projects/p2-icon-${idx + 1}.png`;
+                  };
+                  
+                  return (
+                    <div key={index} className="aspect-square rounded-lg overflow-hidden transition-transform duration-200 ease-in-out hover:scale-105 cursor-pointer">
+                      <img
+                        src={getImageSrc(index)}
+                        alt={`Design process ${index + 1}`}
+                        width={128}
+                        height={128}
+                        decoding="async"
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -238,7 +192,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
                   playsInline
                   preload="metadata"
                   aria-label={meta.name}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-contain"
                 />
               ) : (
                 <img 
@@ -248,7 +202,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
                   height={900} 
                   decoding="async" 
                   loading="lazy" 
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]" 
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
                 />
               )}
               <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
@@ -267,7 +221,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
 (P2Content as any).sections = [
   { id: 'overview', label: 'Overview' },
   { id: 'concept', label: 'IP Details' },
-  { id: 'features', label: 'Activity Theme' },
+  { id: 'features', label: 'Activity Pop-up' },
   { id: 'process', label: 'UI Design' },
   { id: 'gallery', label: 'Gallery' },
 ];

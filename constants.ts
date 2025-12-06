@@ -35,7 +35,12 @@ export const PROJECTS: Project[] = [
     category: 'UI Design & AIGC',
     group: 'product',
     thumbnailUrl: '/images/projects/p2-thumbnail.png',
-    images: ['/images/projects/p2-0.jpg', '/images/projects/p2-1.jpg'],
+    images: [
+      { src: '/images/projects/p2-1.png', name: 'play with nimo - 小丑鱼' },
+      { src: '/images/projects/p2-2.png', name: 'sakura running - 樱花' },
+      { src: '/images/projects/p2-3.png', name: 'Christmas - 圣诞' },
+      { src: '/images/projects/p2-4.png', name: 'bathtub Soak - 浴缸泡澡' }
+    ],
     description: 'A collection of ceramic tableware celebrating the imperfections of hand-molding. Each piece is unique, reflecting the wabi-sabi philosophy.',
     year: '2024',
     role: 'UI Designer',
