@@ -9,8 +9,8 @@ const FADE_IN_UP = createFadeInUp();
 const P7Content: React.FC<ProjectContentProps> = ({ project }) => {
   const sections = [
     { id: 'overview', label: 'Overview' },
-    { id: 'concept', label: 'Concept' },
-    { id: 'installation', label: 'Installation' },
+    { id: 'concept', label: 'Problem Mining' },
+    { id: 'installation', label: 'Process Comparison' },
     { id: 'process', label: 'Process' },
     { id: 'gallery', label: 'Gallery' },
   ];
@@ -70,108 +70,158 @@ const P7Content: React.FC<ProjectContentProps> = ({ project }) => {
         </div>
       </div>
 
-      {/* Concept Section */}
+      {/* Problem Mining Section */}
       <div id="concept" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Concept</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              Woven Light是一个探索光与空间关系的互动装置艺术项目。通过编织光线和创造光影交织的空间体验，我们试图打破观众与艺术作品之间的界限，让观者成为作品的一部分。
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-12">Problem Mining</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="border border-stone-200 rounded-3xl p-8">
+            <h3 className="font-serif text-xl text-stone-800 mb-6">时间成本高</h3>
+            <p className="font-sans text-stone-600 leading-relaxed mb-4">
+              从拍摄到修图平均要2-3天，上新速度严重受限，大促期间更是难以应对。
             </p>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              项目灵感来源于传统编织工艺和现代光影艺术的结合，我们使用光纤、LED和互动传感器，创造出一个能够响应观众动作和情绪的光影环境，探索光作为媒介的表达可能性。
-            </p>
+            <div className="flex items-center gap-2 text-stone-500 text-sm">
+              <span className="font-medium">平均耗时:</span>
+              <span className="font-bold text-stone-700">2-3天</span>
+            </div>
           </div>
-          <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-            <img
-              src="/images/projects/p7-concept.jpg"
-              alt="Concept visualization"
-              width={600}
-              height={400}
-              decoding="async"
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
+          
+          <div className="border border-stone-200 rounded-3xl p-8">
+            <h3 className="font-serif text-xl text-stone-800 mb-6">费用昂贵</h3>
+            <p className="font-sans text-stone-600 leading-relaxed mb-4">
+              专业摄影+后期修图费用高昂，中小商家难以承担，尤其对于多SKU的店铺。
+            </p>
+            <div className="flex items-center gap-2 text-stone-500 text-sm">
+              <span className="font-medium">单张成本:</span>
+              <span className="font-bold text-stone-700">¥50-200</span>
+            </div>
+          </div>
+          
+          <div className="border border-stone-200 rounded-3xl p-8">
+            <h3 className="font-serif text-xl text-stone-800 mb-6">专业度不足</h3>
+            <p className="font-sans text-stone-600 leading-relaxed mb-4">
+              非专业人士较难处理光影、构图和后期，自制图片质量难以保证，影响商品转化率。
+            </p>
+            <div className="flex items-center gap-2 text-stone-500 text-sm">
+              <span className="font-medium">转化率影响:</span>
+              <span className="font-bold text-stone-700">70%商家自评不满意</span>
+            </div>
+          </div>
+          
+          <div className="border border-stone-200 rounded-3xl p-8">
+            <h3 className="font-serif text-xl text-stone-800 mb-6">迭代缓慢</h3>
+            <p className="font-sans text-stone-600 leading-relaxed mb-4">
+              商品图更新迭代缓慢，无法及时响应市场变化和促销需求。
+            </p>
+            <div className="flex items-center gap-2 text-stone-500 text-sm">
+              <span className="font-medium">响应周期:</span>
+              <span className="font-bold text-stone-700">7-14天</span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Installation Section */}
       <div id="installation" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Installation Design</h2>
-        <div className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              variants={FADE_IN_UP}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.1 }}
-              className="space-y-4"
-            >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/projects/p7-installation-1.jpg"
-                  alt="Light weaving technique"
-                  width={400}
-                  height={400}
-                  decoding="async"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-12">Process Comparison</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="border border-stone-200 rounded-3xl p-8 text-center">
+            <div className="w-16 h-16 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="font-serif text-2xl text-stone-700">1</span>
+            </div>
+            <h3 className="font-serif text-xl text-stone-800 mb-4">传统流程</h3>
+            <p className="font-sans text-stone-600 leading-relaxed mb-6">
+              专业拍摄、后期修图、多轮审核，流程繁琐且耗时
+            </p>
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">时间成本</span>
+                <span className="font-bold text-stone-700">2-3天</span>
               </div>
-              <h3 className="font-serif text-xl text-stone-800">光线编织</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                使用光纤和LED灯带，通过特殊的编织技术，创造出立体的光线结构，形成既柔软又坚固的光影网格。
-              </p>
-            </motion.div>
-            
-            <motion.div
-              variants={FADE_IN_UP}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.2 }}
-              className="space-y-4"
-            >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/projects/p7-installation-2.jpg"
-                  alt="Interactive sensors"
-                  width={400}
-                  height={400}
-                  decoding="async"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">单张成本</span>
+                <span className="font-bold text-stone-700">¥50-200</span>
               </div>
-              <h3 className="font-serif text-xl text-stone-800">互动感应</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                集成多种传感器，包括距离传感器、声音传感器和动作捕捉器，使装置能够感知观众的存在和动作，并做出相应的光影变化。
-              </p>
-            </motion.div>
-            
-            <motion.div
-              variants={FADE_IN_UP}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.3 }}
-              className="space-y-4"
-            >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/projects/p7-installation-3.jpg"
-                  alt="Spatial design"
-                  width={400}
-                  height={400}
-                  decoding="async"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">迭代速度</span>
+                <span className="font-bold text-stone-700">7-14天</span>
               </div>
-              <h3 className="font-serif text-xl text-stone-800">空间设计</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                精心设计的空间布局和观众流线，创造沉浸式的体验环境，引导观众在光影空间中探索和互动。
-              </p>
-            </motion.div>
+            </div>
+          </div>
+          
+          <div className="border border-stone-600 rounded-3xl p-8 text-center relative shadow-md">
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-stone-600 text-white px-4 py-1 rounded-full text-sm">
+              推荐方案
+            </div>
+            <div className="w-16 h-16 bg-stone-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="font-serif text-2xl text-white">2</span>
+            </div>
+            <h3 className="font-serif text-xl text-stone-800 mb-4">AI辅助流程</h3>
+            <p className="font-sans text-stone-600 leading-relaxed mb-6">
+              智能生成、快速迭代、一键应用，大幅提升效率
+            </p>
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">时间成本</span>
+                <span className="font-bold text-stone-700">&lt;10分钟</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">单张成本</span>
+                <span className="font-bold text-stone-700">¥1-5</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">迭代速度</span>
+                <span className="font-bold text-stone-700">实时</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border border-stone-200 rounded-3xl p-8 text-center">
+            <div className="w-16 h-16 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="font-serif text-2xl text-stone-700">3</span>
+            </div>
+            <h3 className="font-serif text-xl text-stone-800 mb-4">混合流程</h3>
+            <p className="font-sans text-stone-600 leading-relaxed mb-6">
+              关键场景专业拍摄，常规内容AI生成，平衡质量与效率
+            </p>
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">时间成本</span>
+                <span className="font-bold text-stone-700">0.5-1天</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">单张成本</span>
+                <span className="font-bold text-stone-700">¥10-50</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-stone-500">迭代速度</span>
+                <span className="font-bold text-stone-700">1-2天</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-stone-50 rounded-3xl p-8">
+          <h3 className="font-serif text-xl text-stone-800 mb-6 text-center">流程对比分析</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="h-2 bg-stone-200 rounded-full mb-4">
+                <div className="h-2 bg-stone-400 rounded-full" style={{width: '25%'}}></div>
+              </div>
+              <p className="font-sans text-sm text-stone-600">效率评分</p>
+            </div>
+            <div className="text-center">
+              <div className="h-2 bg-stone-200 rounded-full mb-4">
+                <div className="h-2 bg-stone-600 rounded-full" style={{width: '95%'}}></div>
+              </div>
+              <p className="font-sans text-sm text-stone-600">效率评分</p>
+            </div>
+            <div className="text-center">
+              <div className="h-2 bg-stone-200 rounded-full mb-4">
+                <div className="h-2 bg-stone-500 rounded-full" style={{width: '70%'}}></div>
+              </div>
+              <p className="font-sans text-sm text-stone-600">效率评分</p>
+            </div>
           </div>
         </div>
       </div>
@@ -329,8 +379,8 @@ const P7Content: React.FC<ProjectContentProps> = ({ project }) => {
 (P7Content as any).id = 'p7';
 (P7Content as any).sections = [
   { id: 'overview', label: 'Overview' },
-  { id: 'concept', label: 'Concept' },
-  { id: 'installation', label: 'Installation' },
+  { id: 'concept', label: 'Problem Mining' },
+  { id: 'installation', label: 'Process Comparison' },
   { id: 'process', label: 'Process' },
   { id: 'gallery', label: 'Gallery' },
 ];

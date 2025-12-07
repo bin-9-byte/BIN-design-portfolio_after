@@ -94,23 +94,28 @@ export const PROJECTS: Project[] = [
     category: 'Game Design & Art Design',
     group: 'product',
     thumbnailUrl: '/images/projects/p6-thumbnail.png',
-    images: ['/images/projects/p6-0.jpg', '/images/projects/p6-1.jpg'],
-    description: 'Cast iron cookware designed for longevity and generational transfer. The textured surface improves with age and use.',
-    year: '2024',
-    role: 'Industrial Designer',
-    client: 'Foundry X'
+    images: [
+      { src: '/images/projects/p6-1.png', name: '游戏道具' }, 
+      { src: '/images/projects/p6-0.png', name: '人物立绘' },
+      { src: '/images/projects/p6-2.png', name: '游戏场景' },
+      { src: '/images/projects/p6-3.png', name: '游戏界面' },
+    ],
+    description: '《残碑》是一款深度融合唐代历史底蕴的策略战棋游戏，以唐代乱世纷争为叙事基底。创新性引入 AI 设计工具赋能美术创作，从恢弘的长安宫阙、苍凉的边关战场等场景搭建，到契合唐代规制的服饰道具、神态鲜明的人物群像等视觉元素，均通过 AI 实现精细化呈现与风格统一。为玩家构建出兼具审美价值与叙事张力的唐代乱世图景。',
+    year: '2023',
+    role: 'Game Designer',
+    client: 'CAFA & ZLong GAME'
   },
   {
     id: 'p7',
-    title: 'Woven Light',
+    title: '电商创作工具',
     category: 'Product Design',
     group: 'product',
-    thumbnailUrl: '/images/projects/p7-thumbnail.jpg',
+    thumbnailUrl: '/images/projects/p7-thumbnail.png',
     images: ['/images/projects/p7-0.jpg', '/images/projects/p7-1.jpg'],
-    description: 'Bamboo light fixtures that cast intricate shadows. Merging traditional weaving techniques with modern LED technology.',
-    year: '2023',
+    description: '在智能创作云中选择商品图生成，只需上传实拍图或白底图，即可快速生成光影融合自然的专业级商品图。解决传统拍摄中棚拍成本高、修图周期长、素材同质化等痛点。',
+    year: '2024',
     role: 'Designer',
-    client: 'Lumina'
+    client: 'Intelligent creative cloud'
   },
   {
     id: 'p8',
