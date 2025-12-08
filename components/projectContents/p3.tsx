@@ -1,18 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ProjectContentProps } from './ProjectContent';
 import { createFadeInUp, EASE_DEFAULT, DURATIONS } from '../../constants/animations';
-import { getImageMeta } from '../utils/imageMeta';
 
 const FADE_IN_UP = createFadeInUp();
+
+// 自适应图片组件，保持原始宽高比
+const ResponsiveImage: React.FC<{ src: string; alt: string; name: string; className?: string }> = ({ 
+  src, 
+  alt, 
+  name, 
+  className = '' 
+}) => {
+  const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight });
+      setIsLoaded(true);
+    };
+    img.src = src;
+  }, [src]);
+
+  return (
+    <div className={`group relative overflow-hidden rounded-2xl ${className}`}>
+      <img 
+        src={src} 
+        alt={alt} 
+        decoding="async" 
+        loading="lazy" 
+        className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
+        style={{ 
+          display: 'block',
+          aspectRatio: isLoaded ? `${imageDimensions.width} / ${imageDimensions.height}` : 'auto'
+        }}
+      />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
+        <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">{name}</span>
+      </div>
+    </div>
+  );
+};
 
 const P3Content: React.FC<ProjectContentProps> = ({ project }) => {
   const sections = [
     { id: 'overview', label: 'Overview' },
-    { id: 'concept', label: 'Concept' },
-    { id: 'technique', label: 'Technique' },
-    { id: 'process', label: 'Process' },
     { id: 'gallery', label: 'Gallery' },
+  ];
+
+  // 只使用这五张图片，不使用project.images
+  const galleryImages = [
+    { src: '/images/projects/p3-0.png', name: 'Photograph 1' },
+    { src: '/images/projects/p3-1.png', name: 'Photograph 2' },
+    { src: '/images/projects/p3-2.png', name: 'Photograph 3' },
+    { src: '/images/projects/p3-3.png', name: 'Photograph 4' },
+    { src: '/images/projects/p3-4.png', name: 'Photograph 5' },
   ];
 
   return (
@@ -70,255 +114,31 @@ const P3Content: React.FC<ProjectContentProps> = ({ project }) => {
         </div>
       </div>
 
-      {/* Concept Section */}
-      <div id="concept" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Concept</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              Paper & Shadow 是一个探索纸质媒介与光影关系的艺术摄影项目。通过精心设计的纸张折叠、剪裁和排列，创造出独特的光影效果，探索二维平面与三维空间之间的视觉张力。
-            </p>
-            <p className="font-sans text-stone-600 leading-relaxed">
-              项目灵感来源于传统折纸艺术和现代光影装置，将日常的纸张转化为充满诗意的视觉语言，通过光影的变化展现时间的流逝和空间的转换。
-            </p>
-          </div>
-          <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-            <img
-              src="/images/projects/p3-concept.jpg"
-              alt="Concept visualization"
-              width={600}
-              height={400}
-              decoding="async"
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Technique Section */}
-      <div id="technique" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Technique</h2>
-        <div className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Gallery Section - Waterfall Layout */}
+      <div id="gallery" className="scroll-mt-20">
+        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Photography Gallery</h2>
+        
+        {/* 瀑布流布局 - 只使用这五张图片 */}
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+          {galleryImages.map((img, idx) => (
             <motion.div
-              variants={FADE_IN_UP}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.1 }}
-              className="space-y-4"
+              key={idx}
+              className="break-inside-avoid mb-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: DURATIONS.medium, 
+                ease: EASE_DEFAULT,
+                delay: idx * 0.1 
+              }}
             >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/projects/p3-technique-1.jpg"
-                  alt="Paper folding technique"
-                  width={400}
-                  height={400}
-                  decoding="async"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="font-serif text-xl text-stone-800">折纸工艺</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                运用传统折纸技术，通过精确的折叠角度和层次，创造出能够产生丰富阴影的立体结构。
-              </p>
+              <ResponsiveImage 
+                src={img.src} 
+                alt={img.name} 
+                name={img.name} 
+              />
             </motion.div>
-            
-            <motion.div
-              variants={FADE_IN_UP}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.2 }}
-              className="space-y-4"
-            >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/projects/p3-technique-2.jpg"
-                  alt="Light control technique"
-                  width={400}
-                  height={400}
-                  decoding="async"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="font-serif text-xl text-stone-800">光线控制</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                精心设计光源位置和强度，通过不同角度的光线照射，突出纸张的质感和层次感。
-              </p>
-            </motion.div>
-            
-            <motion.div
-              variants={FADE_IN_UP}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.3 }}
-              className="space-y-4"
-            >
-              <div className="aspect-square bg-stone-200 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/projects/p3-technique-3.jpg"
-                  alt="Photography technique"
-                  width={400}
-                  height={400}
-                  decoding="async"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="font-serif text-xl text-stone-800">摄影构图</h3>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                运用长曝光和精确对焦技术，捕捉光影的微妙变化，强调纸张与阴影之间的对比关系。
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Process Section */}
-      <div id="process" className="mb-20 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Creative Process</h2>
-        <div className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="font-serif text-xl text-stone-800 mb-4">1. 概念探索</h3>
-              <p className="font-sans text-stone-600 leading-relaxed mb-4">
-                项目始于对纸张特性的深入研究，我们测试了不同类型纸张的透光性、柔韧性和质感，探索它们在光影下的表现潜力。
-              </p>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                通过大量实验，我们确定了最适合表现光影效果的纸张类型和折叠方式，为后续创作奠定了基础。
-              </p>
-            </div>
-            <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p3-process-1.jpg"
-                alt="Concept exploration"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p3-process-2.jpg"
-                alt="Paper manipulation"
-                width={600}
-                  height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h3 className="font-serif text-xl text-stone-800 mb-4">2. 纸张处理</h3>
-              <p className="font-sans text-stone-600 leading-relaxed mb-4">
-                我们采用多种纸张处理技术，包括折叠、剪裁、揉捏和层叠，创造出能够产生丰富光影效果的立体结构。
-              </p>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                每一件作品都需要反复试验和调整，确保纸张的形状和角度能够产生预期的光影效果。
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="font-serif text-xl text-stone-800 mb-4">3. 光影实验</h3>
-              <p className="font-sans text-stone-600 leading-relaxed mb-4">
-                在暗室环境中，我们尝试了多种光源位置和角度，记录不同光线条件下纸张与阴影的变化关系。
-              </p>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                通过精确控制光线强度和方向，我们创造出富有层次感和戏剧性的光影效果，赋予纸张以生命和情感。
-              </p>
-            </div>
-            <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p3-process-3.jpg"
-                alt="Light and shadow experiments"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
-              <img
-                src="/images/projects/p3-process-4.jpg"
-                alt="Final photography"
-                width={600}
-                height={400}
-                decoding="async"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h3 className="font-serif text-xl text-stone-800 mb-4">4. 最终拍摄</h3>
-              <p className="font-sans text-stone-600 leading-relaxed mb-4">
-                使用高分辨率相机和专业灯光设备，我们捕捉了纸张与光影互动的瞬间，强调质感和细节。
-              </p>
-              <p className="font-sans text-stone-600 leading-relaxed">
-                通过后期处理，我们进一步强化了光影对比，使每一张照片都成为独立的艺术作品。
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      <div id="gallery" className="space-y-12 scroll-mt-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Gallery</h2>
-        <div className="space-y-8">
-          {project.images.map((img, idx) => {
-            const meta = getImageMeta(img as any, project as any, idx);
-            return (
-              <motion.div
-                key={idx}
-                className="group relative overflow-hidden rounded-2xl"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: DURATIONS.medium, 
-                  ease: EASE_DEFAULT,
-                  delay: idx * 0.1 
-                }}
-              >
-                {meta.isVideo ? (
-                  <video
-                    src={meta.src}
-                    poster={meta.poster}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    aria-label={meta.name}
-                    className="w-full h-auto object-cover"
-                  />
-                ) : (
-                  <img 
-                    src={meta.src} 
-                    alt={meta.name} 
-                    width={800} 
-                    height={600} 
-                    decoding="async" 
-                    loading="lazy" 
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]" 
-                  />
-                )}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
-                  <span aria-hidden="true" className="font-sans text-[13px] tracking-widest text-stone-100">{meta.name}</span>
-                </div>
-              </motion.div>
-            );
-          })}
+          ))}
         </div>
       </div>
     </>
@@ -329,9 +149,6 @@ const P3Content: React.FC<ProjectContentProps> = ({ project }) => {
 (P3Content as any).id = 'p3';
 (P3Content as any).sections = [
   { id: 'overview', label: 'Overview' },
-  { id: 'concept', label: 'Concept' },
-  { id: 'technique', label: 'Technique' },
-  { id: 'process', label: 'Process' },
   { id: 'gallery', label: 'Gallery' },
 ];
 

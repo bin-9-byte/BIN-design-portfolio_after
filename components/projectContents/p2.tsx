@@ -133,7 +133,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
               />
             </div>
           </div>
-          
+
           <div className="space-y-8">
             <div>
               <h3 className="font-serif text-xl text-stone-800 mb-4">2. Icon Design</h3>
@@ -150,7 +150,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
                     // 索引从0开始，所以需要+1
                     return `/images/projects/p2-icon-${idx + 1}.png`;
                   };
-                  
+
                   return (
                     <div key={index} className="aspect-square rounded-lg overflow-hidden transition-transform duration-200 ease-in-out hover:scale-105 cursor-pointer">
                       <img
@@ -195,14 +195,14 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
                   className="w-full h-auto object-contain"
                 />
               ) : (
-                <img 
-                  src={meta.src} 
-                  alt={meta.name} 
-                  width={1200} 
-                  height={900} 
-                  decoding="async" 
-                  loading="lazy" 
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
+                <img
+                  src={meta.src}
+                  alt={meta.name}
+                  width={1200}
+                  height={900}
+                  decoding="async"
+                  loading="lazy"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               )}
               <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">

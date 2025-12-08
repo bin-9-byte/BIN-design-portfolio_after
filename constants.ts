@@ -15,13 +15,13 @@ export const PROJECTS: Project[] = [
     group: 'spatial',
     thumbnailUrl: '/images/projects/p1-thumbnail.png',
     images: [
-      { src: '/images/projects/p1-0.png', name: '萌友-66' }, 
-      { src: '/images/projects/p1-1.png', name: '萌友-kuku' }, 
-      { src: '/images/projects/p1-2.png', name: '萌友-33 一娃 小5 腊八' }, 
-      { src: '/images/projects/p1-3.png', name: '萌友-nini' }, 
-      { src: '/images/projects/p1-4.png', name: '萌友-lucky' }, 
-      { src: '/images/projects/p1-5.png', name: '萌友-肉桂' }, 
-      { src: '/images/projects/p1-6.png', name: '萌友-urus' }, 
+      { src: '/images/projects/p1-0.png', name: '萌友-66' },
+      { src: '/images/projects/p1-1.png', name: '萌友-kuku' },
+      { src: '/images/projects/p1-2.png', name: '萌友-33 一娃 小5 腊八' },
+      { src: '/images/projects/p1-3.png', name: '萌友-nini' },
+      { src: '/images/projects/p1-4.png', name: '萌友-lucky' },
+      { src: '/images/projects/p1-5.png', name: '萌友-肉桂' },
+      { src: '/images/projects/p1-6.png', name: '萌友-urus' },
       { src: '/images/projects/p1-7.png', name: '萌友-coconut' }
     ],
     description: '在小程序上线宠物季DIY专属宠物杯的活动，需要AIGC实现宠物风格化，提供了目标风格图片。主要负责整个流程搭建，风格调试，批量验证。',
@@ -48,15 +48,15 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'p3',
-    title: 'Paper & Shadow',
-    category: 'Brand Identity',
+    title: 'Photographs',
+    category: 'Personal Work',
     group: 'identity',
     thumbnailUrl: '/images/projects/p3-thumbnail.jpg',
     images: ['/images/projects/p3-0.jpg', '/images/projects/p3-1.jpg'],
     description: 'Rebranding for a heritage tea shop in Kyoto. We utilized textured paper stocks and embossing to create a tactile brand experience.',
-    year: '2022',
-    role: 'Art Director',
-    client: 'Uji Tea Co.'
+    year: 'Every year',
+    role: 'Life Observer',
+    client: 'Myself'
   },
   {
     id: 'p4',
@@ -65,8 +65,8 @@ export const PROJECTS: Project[] = [
     group: 'spatial',
     thumbnailUrl: '/images/projects/p4-thumbnail.png',
     images: [
-      { src: '/images/projects/p4-0.png', name: '线上应用效果' }, 
-      { src: '/images/projects/p4-1.png', name: '更多风格' }, 
+      { src: '/images/projects/p4-0.png', name: '线上应用效果' },
+      { src: '/images/projects/p4-1.png', name: '更多风格' },
       { src: '/images/projects/p4-2.png', name: '更多风格' },
     ],
     description: '筑梦岛APP希望在AI虚拟角色设定的玩法内上线乙女（女性向）人像风格，现有动漫1.3.1模型文生图的乙女风格效果较单一，无法满足客户对乙女风格的需求，因此选择定制训练乙女风格Lora模型，以增强动漫1.3.1模型的乙女风格化效果。',
@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
     group: 'product',
     thumbnailUrl: '/images/projects/p6-thumbnail.png',
     images: [
-      { src: '/images/projects/p6-1.png', name: '游戏道具' }, 
+      { src: '/images/projects/p6-1.png', name: '游戏道具' },
       { src: '/images/projects/p6-0.png', name: '人物立绘' },
       { src: '/images/projects/p6-2.png', name: '游戏场景' },
       { src: '/images/projects/p6-3.png', name: '游戏界面' },
@@ -111,7 +111,10 @@ export const PROJECTS: Project[] = [
     category: 'Product Design',
     group: 'product',
     thumbnailUrl: '/images/projects/p7-thumbnail.png',
-    images: ['/images/projects/p7-0.jpg', '/images/projects/p7-1.jpg'],
+    images: [
+      { src: '/images/projects/p7-0.png', name: '主要生成页面展示' },
+      { src: '/images/projects/p7-1.png', name: '更多智能创作云项目' },
+    ],
     description: '在智能创作云中选择商品图生成，只需上传实拍图或白底图，即可快速生成光影融合自然的专业级商品图。解决传统拍摄中棚拍成本高、修图周期长、素材同质化等痛点。',
     year: '2024',
     role: 'Designer',
