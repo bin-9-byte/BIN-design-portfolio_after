@@ -4,13 +4,14 @@ export interface Project {
   id: string;
   title: string;
   category: string;
-  group: 'spatial' | 'product' | 'identity';
+  group: 'aigc' | 'product' | 'creative';
   thumbnailUrl: string;
   images: (string | ImageItem)[];
   description: string;
   year: string;
   client?: string;
   role?: string;
+  link?: string;
 }
 
 export type ImageItem = {

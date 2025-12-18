@@ -7,9 +7,9 @@ import { FADE_IN_RIGHT, EASE_DEFAULT, DURATIONS } from '../constants/animations'
 import { zIndex } from "../constants/zIndex";
 import { ScrollHint } from './ui/ScrollHint';
 
-const SPATIAL_PROJECTS = PROJECTS.filter(p => p.group === 'spatial');
+const AIGC_PROJECTS = PROJECTS.filter(p => p.group === 'aigc');
 const PRODUCT_PROJECTS = PROJECTS.filter(p => p.group === 'product');
-const IDENTITY_PROJECTS = PROJECTS.filter(p => p.group === 'identity');
+const CREATIVE_PROJECTS = PROJECTS.filter(p => p.group === 'creative');
 
 const SCROLL_BUTTON_BASE = "hidden md:flex absolute z-20 p-2 rounded-full shadow-sm transition-all duration-500 opacity-0 group-hover:opacity-100 active:scale-95";
 const SCROLL_BUTTON_THEME = "bg-wabi-paper/90 backdrop-blur-sm border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-wabi-paper hover:border-stone-300";
@@ -158,17 +158,17 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick, onHover, onH
       </div>
 
       <ProjectSection
-        title="AIGC Projects"
-        subtitle="Workflow / Model train / Prompt engineering"
-        projects={SPATIAL_PROJECTS}
+        title="AIGC Design Projects"
+        subtitle="AI风格化 · 模型训练 · 工作流程"
+        projects={AIGC_PROJECTS}
         onProjectClick={onProjectClick}
         onHover={onHover}
         onHoverBlock={onHoverBlock}
       />
 
       <ProjectSection
-        title="User Experience Design"
-        subtitle="Intelligent Creative Cloud / Lumi"
+        title="Product Design"
+        subtitle="UI/UX · 游戏设计 · 产品工具"
         projects={PRODUCT_PROJECTS}
         onProjectClick={onProjectClick}
         onHover={onHover}
@@ -176,9 +176,9 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick, onHover, onH
       />
 
       <ProjectSection
-        title="Other Projects"
-        subtitle="AI tools / Photography / Concept design / Drawing"
-        projects={IDENTITY_PROJECTS}
+        title="Creative Works"
+        subtitle="摄影 · 建筑策展 · 工具收藏"
+        projects={CREATIVE_PROJECTS}
         onProjectClick={onProjectClick}
         onHover={onHover}
         onHoverBlock={onHoverBlock}

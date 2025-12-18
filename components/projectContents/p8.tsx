@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ProjectContentProps } from './ProjectContent';
 import { createFadeInUp, EASE_DEFAULT, DURATIONS } from '../../constants/animations';
 import { getImageMeta } from '../utils/imageMeta';
+import { ExternalLink } from 'lucide-react';
 
 const FADE_IN_UP = createFadeInUp();
 
@@ -64,9 +65,21 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
           <h1 className="font-serif text-4xl md:text-6xl text-stone-900 mb-8 leading-tight">
             {project.title}
           </h1>
-          <p className="font-sans text-stone-600 text-lg leading-relaxed whitespace-pre-line">
+          <p className="font-sans text-stone-600 text-lg leading-relaxed whitespace-pre-line mb-6">
             {project.description}
           </p>
+
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-stone-900 text-white rounded-lg hover:bg-stone-800 transition-colors font-sans text-sm group"
+            >
+              <span>了解更多</span>
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={2} />
+            </a>
+          )}
         </div>
       </div>
 
@@ -124,7 +137,7 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
                 我们邀请当地居民参与艺术创作过程，通过工作坊、故事收集和共同创作，使艺术作品真正反映当地文化和社区声音。
               </p>
             </motion.div>
-            
+
             <motion.div
               variants={FADE_IN_UP}
               initial="hidden"
@@ -148,7 +161,7 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
                 艺术家们根据阿尔山的自然景观、气候条件和人文环境，创作与特定场域紧密结合的作品，使艺术与自然环境和谐共存。
               </p>
             </motion.div>
-            
+
             <motion.div
               variants={FADE_IN_UP}
               initial="hidden"
@@ -202,7 +215,7 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
               />
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
               <img
@@ -263,10 +276,10 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
                 className="group relative overflow-hidden rounded-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: DURATIONS.medium, 
+                transition={{
+                  duration: DURATIONS.medium,
                   ease: EASE_DEFAULT,
-                  delay: idx * 0.1 
+                  delay: idx * 0.1
                 }}
               >
                 {meta.isVideo ? (
@@ -280,14 +293,14 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
                     className="w-full h-auto object-cover"
                   />
                 ) : (
-                  <img 
-                    src={meta.src} 
-                    alt={meta.name} 
-                    width={800} 
-                    height={600} 
-                    decoding="async" 
-                    loading="lazy" 
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]" 
+                  <img
+                    src={meta.src}
+                    alt={meta.name}
+                    width={800}
+                    height={600}
+                    decoding="async"
+                    loading="lazy"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 )}
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-stone-900/70 to-transparent">
