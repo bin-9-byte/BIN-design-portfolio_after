@@ -57,6 +57,16 @@ const P3Content: React.FC<ProjectContentProps> = ({ project }) => {
     { src: '/images/projects/p3-2.png', name: 'Photograph 3' },
     { src: '/images/projects/p3-3.png', name: 'Photograph 4' },
     { src: '/images/projects/p3-4.png', name: 'Photograph 5' },
+    { src: '/images/projects/p3-5.png', name: 'Photograph 6' },
+    { src: '/images/projects/p3-6.png', name: 'Photograph 7' },
+    { src: '/images/projects/p3-7.png', name: 'Photograph 8' },
+    { src: '/images/projects/p3-8.png', name: 'Photograph 9' },
+    { src: '/images/projects/p3-9.png', name: 'Photograph 10' },
+    { src: '/images/projects/p3-10.png', name: 'Photograph 11' },
+    { src: '/images/projects/p3-11.png', name: 'Photograph 12' },
+    { src: '/images/projects/p3-12.png', name: 'Photograph 13' },
+    { src: '/images/projects/p3-13.png', name: 'Photograph 14' },
+    { src: '/images/projects/p3-14.png', name: 'Photograph 15' },
   ];
 
   return (
