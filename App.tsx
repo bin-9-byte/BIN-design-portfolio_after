@@ -3,6 +3,7 @@ import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Profile } from './components/Profile';
 import { Projects } from './components/Projects';
+import { VibeCoding } from './components/VibeCoding';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectDetail } from './components/ProjectDetail';
@@ -49,6 +50,7 @@ const App: React.FC = () => {
           onHover={setCursorText}
           onHoverBlock={setIsHoveringBlock}
         />
+        <VibeCoding onProjectClick={handleProjectClick} />
         <Contact />
       </main>
 

@@ -9,7 +9,7 @@ import { ScrollHint } from './ui/ScrollHint';
 
 const AIGC_PROJECTS = PROJECTS.filter(p => p.group === 'aigc');
 const PRODUCT_PROJECTS = PROJECTS.filter(p => p.group === 'product');
-const CREATIVE_PROJECTS = PROJECTS.filter(p => p.group === 'creative');
+const CREATIVE_PROJECTS = PROJECTS.filter(p => p.group === 'creative' && p.id !== 'p9');
 
 const SCROLL_BUTTON_BASE = "hidden md:flex absolute z-20 p-2 rounded-full shadow-sm transition-all duration-500 opacity-0 group-hover:opacity-100 active:scale-95";
 const SCROLL_BUTTON_THEME = "bg-wabi-paper/90 backdrop-blur-sm border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-wabi-paper hover:border-stone-300";

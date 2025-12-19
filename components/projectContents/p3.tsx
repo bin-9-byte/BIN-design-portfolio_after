@@ -128,8 +128,8 @@ const P3Content: React.FC<ProjectContentProps> = ({ project }) => {
       <div id="gallery" className="scroll-mt-20">
         <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Photography Gallery</h2>
         
-        {/* 瀑布流布局 - 只使用这五张图片 */}
-        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+        {/* 瀑布流布局 - 保持最大三列 */}
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-3 gap-4 space-y-4">
           {galleryImages.map((img, idx) => (
             <motion.div
               key={idx}
