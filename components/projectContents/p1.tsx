@@ -72,7 +72,7 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
         <div className="space-y-12">
           <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
             <img
-              src="/images/projects/p1-research.png"
+              src="/images/projects/p1-research.webp"
               alt="Research process"
               width={1200}
               height={900}
@@ -100,7 +100,7 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
             </div>
             <div className="bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p1-concept.png"
+                src="/images/projects/p1-concept.webp"
                 alt="Concept visualization"
                 width={600}
                 height={400}
@@ -113,7 +113,7 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
           
           <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
             <img
-              src="/images/projects/p1-design.png"
+              src="/images/projects/p1-design.webp"
               alt="Design process"
               width={1200}
               height={800}
@@ -132,7 +132,7 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p1-style-1.png"
+                src="/images/projects/p1-style-1.webp"
                 alt="Initial style concept"
                 width={600}
                 height={400}
@@ -152,7 +152,7 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p1-style-2.png"
+                src="/images/projects/p1-style-2.webp"
                 alt="Refined style concept"
                 width={600}
                 height={400}
@@ -172,7 +172,7 @@ const P1Content: React.FC<ProjectContentProps> = ({ project }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p1-style-3.png"
+                src="/images/projects/p1-style-3.webp"
                 alt="Final style implementation"
                 width={600}
                 height={400}

@@ -52,6 +52,7 @@ const ProjectCard: React.FC<{
           alt={project.title}
           className="w-full h-auto object-cover transition-transform duration-700 group-hover/card:scale-105"
           loading="lazy"
+          decoding="async"
         />
         
         <div className="absolute inset-0 bg-stone-900/0 group-hover/card:bg-stone-900/10 transition-colors duration-500" />

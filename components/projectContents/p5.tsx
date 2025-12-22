@@ -15,15 +15,15 @@ const P5Content: React.FC<ProjectContentProps> = ({ project }) => {
   ];
 
   const styleItems = [
-    { src: '/images/projects/p5-style-1.png', name: 'ID photo' },
-    { src: '/images/projects/p5-style-2.png', name: '3D cartoon' },
-    { src: '/images/projects/p5-style-3.png', name: 'cyberpunk' },
+    { src: '/images/projects/p5-style-1.webp', name: 'ID photo' },
+    { src: '/images/projects/p5-style-2.webp', name: '3D cartoon' },
+    { src: '/images/projects/p5-style-3.webp', name: 'cyberpunk' },
   ];
 
   const scribbleItems = [
-    { src: '/images/projects/p5-approach-1.png', name: '水墨风格' },
-    { src: '/images/projects/p5-approach-2.png', name: '波普风格' },
-    { src: '/images/projects/p5-approach-3.png', name: '3D卡通' },
+    { src: '/images/projects/p5-approach-1.webp', name: '水墨风格' },
+    { src: '/images/projects/p5-approach-2.webp', name: '波普风格' },
+    { src: '/images/projects/p5-approach-3.webp', name: '3D卡通' },
   ];
 
   return (
@@ -126,7 +126,7 @@ const P5Content: React.FC<ProjectContentProps> = ({ project }) => {
             <h3 className="font-serif text-xl text-stone-800 mb-4">3. 功能拆解</h3>
             <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p5-process-0.png"
+                src="/images/projects/p5-process-0.webp"
                 alt="功能拆解示意"
                 width={1200}
                 height={800}
@@ -144,7 +144,7 @@ const P5Content: React.FC<ProjectContentProps> = ({ project }) => {
             </div>
             <div className="md:col-span-7 w-full bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p5-process-1.png"
+                src="/images/projects/p5-process-1.webp"
                 alt="Shooting session"
                 width={600}
                 height={400}
@@ -158,7 +158,7 @@ const P5Content: React.FC<ProjectContentProps> = ({ project }) => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-7 w-full bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p5-process-2.png"
+                src="/images/projects/p5-process-2.webp"
                 alt="Post-processing"
                 width={600}
                 height={400}
@@ -185,7 +185,7 @@ const P5Content: React.FC<ProjectContentProps> = ({ project }) => {
             </div>
             <div className="md:col-span-7 w-full bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p5-process-3.png"
+                src="/images/projects/p5-process-3.webp"
                 alt="Post-processing"
                 width={600}
                 height={400}

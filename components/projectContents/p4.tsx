@@ -75,7 +75,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
         <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Pre-training Preparation</h2>
         <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
           <img
-            src="/images/projects/p4-concept.png"
+            src="/images/projects/p4-concept.webp"
             alt="Concept visualization"
             decoding="async"
             loading="lazy"
@@ -98,7 +98,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
             >
               <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
                 <img
-                  src="/images/projects/p4-character-1.png"
+                  src="/images/projects/p4-character-1.webp"
                   alt="Character design - face"
                   decoding="async"
                   loading="lazy"
@@ -120,7 +120,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
             >
               <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
                 <img
-                  src="/images/projects/p4-character-2.png"
+                  src="/images/projects/p4-character-2.webp"
                   alt="Character design - costume"
                   decoding="async"
                   loading="lazy"
@@ -159,7 +159,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
                 }}
               >
                 <img
-                  src="/images/projects/p4-process-1-1.png"
+                  src="/images/projects/p4-process-1-1.webp"
                   alt="Concept sketches"
                   decoding="async"
                   loading="lazy"
@@ -180,7 +180,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
                 }}
               >
                 <img
-                  src="/images/projects/p4-process-1-2.png"
+                  src="/images/projects/p4-process-1-2.webp"
                   alt="Concept sketches"
                   decoding="async"
                   loading="lazy"
@@ -201,7 +201,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
                 }}
               >
                 <img
-                  src="/images/projects/p4-process-1-3.png"
+                  src="/images/projects/p4-process-1-3.webp"
                   alt="Concept sketches"
                   decoding="async"
                   loading="lazy"
@@ -237,7 +237,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
                 }}
               >
                 <img
-                  src="/images/projects/p4-process-2-1.png"
+                  src="/images/projects/p4-process-2-1.webp"
                   alt="3D modeling process"
                   decoding="async"
                   loading="lazy"
@@ -258,7 +258,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
                 }}
               >
                 <img
-                  src="/images/projects/p4-process-2-2.png"
+                  src="/images/projects/p4-process-2-2.webp"
                   alt="3D modeling process"
                   decoding="async"
                   loading="lazy"
@@ -279,7 +279,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
                 }}
               >
                 <img
-                  src="/images/projects/p4-process-2-3.png"
+                  src="/images/projects/p4-process-2-3.webp"
                   alt="3D modeling process"
                   decoding="async"
                   loading="lazy"
@@ -315,7 +315,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
                 }}
               >
                 <img
-                  src="/images/projects/p4-process-3-1.png"
+                  src="/images/projects/p4-process-3-1.webp"
                   alt="Texture and material work"
                   decoding="async"
                   loading="lazy"
@@ -336,7 +336,7 @@ const P4Content: React.FC<ProjectContentProps> = ({ project }) => {
                 }}
               >
                 <img
-                  src="/images/projects/p4-process-3-2.png"
+                  src="/images/projects/p4-process-3-2.webp"
                   alt="Texture and material work"
                   decoding="async"
                   loading="lazy"

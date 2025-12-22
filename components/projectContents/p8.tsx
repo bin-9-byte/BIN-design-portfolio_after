@@ -136,7 +136,7 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
             </p>
           </div>
           <ResponsiveImage
-            src="/images/projects/p8-concept.jpg"
+            src="/images/projects/p8-concept.webp"
             alt="Concept visualization"
             className="bg-stone-200"
           />
@@ -156,7 +156,7 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
               className="space-y-4"
             >
               <ResponsiveImage
-                src="/images/projects/p8-curatorial-1.jpg"
+                src="/images/projects/p8-curatorial-1.webp"
                 alt="Community engagement"
                 className="bg-stone-200"
               />
@@ -174,7 +174,7 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
               className="space-y-4"
             >
               <ResponsiveImage
-                src="/images/projects/p8-curatorial-2.jpg"
+                src="/images/projects/p8-curatorial-2.webp"
                 alt="Site-specific installations"
                 className="bg-stone-200"
               />
@@ -204,7 +204,7 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
               </p>
             </div>
             <ResponsiveImage
-              src="/images/projects/p8-highlights-1.jpg"
+              src="/images/projects/p8-highlights-1.webp"
               alt="Forest Echoes installation"
               className="bg-stone-200"
             />
@@ -212,7 +212,7 @@ const P8Content: React.FC<ProjectContentProps> = ({ project }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <ResponsiveImage
-              src="/images/projects/p8-highlights-2.jpg"
+              src="/images/projects/p8-highlights-2.webp"
               alt="Memory Weaving workshop"
               className="order-2 md:order-1 bg-stone-200"
             />

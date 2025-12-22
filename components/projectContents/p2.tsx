@@ -84,7 +84,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
           </div>
           <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
             <img
-              src="/images/projects/p2-concept.png"
+              src="/images/projects/p2-concept.webp"
               alt="Concept visualization"
               width={600}
               height={400}
@@ -101,7 +101,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
         <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8">Activity Pop-up</h2>
         <div className="w-full rounded-2xl overflow-hidden">
           <img
-            src="/images/projects/p2-features.png"
+            src="/images/projects/p2-features.webp"
             alt="Activity Pop-up visualization"
             decoding="async"
             loading="lazy"
@@ -123,7 +123,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
             </div>
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p2-button.png"
+                src="/images/projects/p2-button.webp"
                 alt="Research process"
                 width={600}
                 height={400}
@@ -148,7 +148,7 @@ const P2Content: React.FC<ProjectContentProps> = ({ project }) => {
                   // 使用p2-icon-1到p2-icon-16的图片
                   const getImageSrc = (idx: number) => {
                     // 索引从0开始，所以需要+1
-                    return `/images/projects/p2-icon-${idx + 1}.png`;
+                    return `/images/projects/p2-icon-${idx + 1}.webp`;
                   };
 
                   return (

@@ -24,7 +24,7 @@ export const Profile: React.FC = () => {
             style={{ zIndex: zIndex.BASE_CONTENT, willChange: 'transform', x: imgX, y: imgY }}
           >
             <img
-              src='/images/Profile.jpg'
+              src='/images/Profile.webp'
               alt="Profile"
               width={900}
               height={1200}

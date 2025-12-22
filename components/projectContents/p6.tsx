@@ -180,7 +180,7 @@ const P6Content: React.FC<ProjectContentProps> = ({ project }) => {
             >
               <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
                 <img
-                  src="/images/projects/p6-sketch-1.png"
+                  src="/images/projects/p6-sketch-1.webp"
                   alt="Light and shadow strategy"
                   decoding="async"
                   loading="lazy"
@@ -204,7 +204,7 @@ const P6Content: React.FC<ProjectContentProps> = ({ project }) => {
             >
               <div className="w-full bg-stone-200 rounded-2xl overflow-hidden">
                 <img
-                  src="/images/projects/p6-sketch-2.png"
+                  src="/images/projects/p6-sketch-2.webp"
                   alt="Composition strategy"
                   decoding="async"
                   loading="lazy"
@@ -239,7 +239,7 @@ const P6Content: React.FC<ProjectContentProps> = ({ project }) => {
             </div>
             <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p6-process-1.jpg"
+                src="/images/projects/p6-process-1.webp"
                 alt="Historical research"
                 width={600}
                 height={400}
@@ -253,7 +253,7 @@ const P6Content: React.FC<ProjectContentProps> = ({ project }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p6-process-2.jpg"
+                src="/images/projects/p6-process-2.webp"
                 alt="Site exploration"
                 width={600}
                 height={400}
@@ -285,7 +285,7 @@ const P6Content: React.FC<ProjectContentProps> = ({ project }) => {
             </div>
             <div className="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p6-process-3.jpg"
+                src="/images/projects/p6-process-3.webp"
                 alt="Photography execution"
                 width={600}
                 height={400}
@@ -299,7 +299,7 @@ const P6Content: React.FC<ProjectContentProps> = ({ project }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="order-2 md:order-1 aspect-video bg-stone-200 rounded-2xl overflow-hidden">
               <img
-                src="/images/projects/p6-process-4.jpg"
+                src="/images/projects/p6-process-4.webp"
                 alt="Image selection and editing"
                 width={600}
                 height={400}

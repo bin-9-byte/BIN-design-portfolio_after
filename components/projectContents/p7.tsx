@@ -147,7 +147,13 @@ const P7Content: React.FC<ProjectContentProps> = ({ project }) => {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-full bg-stone-200 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="Creator" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img 
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" 
+                  alt="Creator" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                  decoding="async"
+                  loading="lazy"
+                />
               </div>
               <div>
                 <h3 className="font-serif text-xl text-stone-900">独立创作者</h3>
@@ -187,7 +193,13 @@ const P7Content: React.FC<ProjectContentProps> = ({ project }) => {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-full bg-stone-200 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" alt="Brand Manager" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" 
+                  alt="Brand Manager" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                  decoding="async"
+                  loading="lazy"
+                />
               </div>
               <div>
                 <h3 className="font-serif text-xl text-stone-900">品牌营销团队</h3>

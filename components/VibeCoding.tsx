@@ -58,6 +58,7 @@ const VibeCard: React.FC<{
           alt={item.title}
           className="w-full h-auto object-cover transition-transform duration-700 group-hover/card:scale-105"
           loading="lazy"
+          decoding="async"
         />
         
         {/* Overlay with Icon */}
