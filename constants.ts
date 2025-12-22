@@ -4,7 +4,89 @@ export const NAVIGATION_LINKS = [
   { name: 'Portfolio', href: '#home' },
   { name: 'Profile', href: '#profile' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Lab', href: '#vibecoding' },
   { name: 'Contact', href: '#contact' },
+];
+
+export interface VibeItem {
+  id: string;
+  title: string;
+  category: string;
+  group: 'coding' | 'art' | 'tools' | 'experiments';
+  thumbnailUrl: string;
+  year: string;
+  link?: string;
+  type: 'link' | 'doc';
+  description?: string;
+}
+
+export const VIBE_ITEMS: VibeItem[] = [
+  {
+    id: 'v1',
+    title: '交互式数据可视化',
+    category: 'Creative Coding',
+    group: 'coding',
+    thumbnailUrl: '/images/projects/p9-project-1.png',
+    year: '2023',
+    type: 'link',
+    link: 'https://codepen.io',
+    description: 'Processing / p5.js experiments'
+  },
+  {
+    id: 'v2',
+    title: '生成艺术实验',
+    category: 'Generative Art',
+    group: 'art',
+    thumbnailUrl: '/images/projects/p9-project-2.png',
+    year: '2023',
+    type: 'doc',
+    link: '#',
+    description: 'Algorithms and aesthetics'
+  },
+  {
+    id: 'v3',
+    title: '创意小工具',
+    category: 'Tools',
+    group: 'tools',
+    thumbnailUrl: '/images/projects/p9-project-3.png',
+    year: '2024',
+    type: 'link',
+    link: '#',
+    description: 'Efficiency boosters'
+  },
+  {
+    id: 'v4',
+    title: '设计系统探索',
+    category: 'System Design',
+    group: 'experiments',
+    thumbnailUrl: '/images/projects/p9-project-4.png',
+    year: '2024',
+    type: 'doc',
+    link: '#',
+    description: 'Atomic design principles'
+  },
+  {
+    id: 'v5',
+    title: '交互原型',
+    category: 'Prototyping',
+    group: 'experiments',
+    thumbnailUrl: '/images/projects/p9-project-5.png',
+    year: '2023',
+    type: 'link',
+    link: '#',
+    description: 'Framer / Principle demos'
+  },
+  {
+    id: 'v6',
+    title: '趣味项目',
+    category: 'Experiments',
+    group: 'coding',
+    thumbnailUrl: '/images/projects/p9-project-6.png',
+    year: '2024',
+    type: 'link',
+    link: '#',
+    description: 'Just for fun'
+  }
 ];
 
 export const PROJECTS: Project[] = [

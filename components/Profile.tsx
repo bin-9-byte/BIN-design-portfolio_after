@@ -13,7 +13,7 @@ export const Profile: React.FC = () => {
   const frameX = useTransform(scrollYProgress, [0, 1], [4, 8]);
   const frameY = useTransform(scrollYProgress, [0, 1], [4, 8]);
   return (
-    <Section id="profile" className="bg-transparent min-h-[80vh] flex items-center">
+    <Section id="profile" className="bg-transparent min-h-[80vh] flex items-center py-20 md:py-32">
       <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
         {/* Image Area - Asymmetric placement */}
         <div className="md:col-span-5 relative">

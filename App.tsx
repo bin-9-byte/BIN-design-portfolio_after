@@ -11,6 +11,7 @@ import { Project } from './types';
 import { AnimatePresence } from 'framer-motion';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { FluidBackground } from './components/ui/FluidBackground';
+import { SectionDivider } from './components/ui/SectionDivider';
 
 const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -44,13 +45,24 @@ const App: React.FC = () => {
 
       <main className="w-full">
         <Hero onHover={setCursorText} onHoverBlock={setIsHoveringBlock} />
+        
         <Profile />
+        <SectionDivider variant="fade" />
+        
         <Projects
           onProjectClick={handleProjectClick}
           onHover={setCursorText}
           onHoverBlock={setIsHoveringBlock}
         />
-        <VibeCoding onProjectClick={handleProjectClick} />
+        <SectionDivider variant="symbol" />
+        
+        <VibeCoding 
+          onProjectClick={handleProjectClick}
+          onHover={setCursorText}
+          onHoverBlock={setIsHoveringBlock}
+        />
+        <SectionDivider variant="fade" />
+        
         <Contact />
       </main>
 
