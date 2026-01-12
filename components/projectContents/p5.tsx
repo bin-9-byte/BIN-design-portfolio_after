@@ -139,7 +139,7 @@ const P5Content: React.FC<ProjectContentProps> = ({ project }) => {
             <div className="md:col-span-5 space-y-4">
               <h3 className="font-serif text-xl text-stone-800">人脸前置检测</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
-                我们使用连拍模式捕捉表情和动作的微妙变化，确保不错过任何一个精彩瞬间，同时保持拍摄氛围的轻松愉快。
+                在输入时，设计加入前置检测节点组。工作流检测输入图片中人脸数量与占比，若不符合要求，会提示用户重新上传，以此来前置阻断生成效果不好的图片输入。
               </p>
             </div>
             <div className="md:col-span-7 w-full bg-stone-200 rounded-2xl overflow-hidden">
@@ -171,7 +171,7 @@ const P5Content: React.FC<ProjectContentProps> = ({ project }) => {
             <div className="md:col-span-5 space-y-4">
               <h3 className="font-serif text-xl text-stone-800">自动构图</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
-                我们特别关注肤色还原和细节保留，确保每张照片都能展现孩子最美好的一面，同时保持商业摄影的专业水准。
+                在工作流中加入自动构图节点组。工作流会根据输入图片中的人脸位置，自动调整构图，确保照片中人脸居中，同时保持照片的整体比例。
               </p>
             </div>
           </div>
@@ -180,7 +180,7 @@ const P5Content: React.FC<ProjectContentProps> = ({ project }) => {
             <div className="md:col-span-5 space-y-4">
               <h3 className="font-serif text-xl text-stone-800">一键切换风格</h3>
               <p className="font-sans text-stone-600 leading-relaxed">
-                我们特别关注肤色还原和细节保留，确保每张照片都能展现孩子最美好的一面，同时保持商业摄影的专业水准。
+                在工作流中编写python脚本实现开关切换风格功能，做到部署一张显卡可应用三个风格，节省算力与部署人力。用户选择的风格通过不同req_key调用对应开关，完成切换图片的风格。
               </p>
             </div>
             <div className="md:col-span-7 w-full bg-stone-200 rounded-2xl overflow-hidden">

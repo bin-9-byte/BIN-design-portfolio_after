@@ -123,7 +123,7 @@ export const PROJECTS: Project[] = [
       { src: '/images/projects/p2-3.webp', name: 'Christmas - 圣诞' },
       { src: '/images/projects/p2-4.webp', name: 'bathtub Soak - 浴缸泡澡' }
     ],
-    description: 'A collection of ceramic tableware celebrating the imperfections of hand-molding. Each piece is unique, reflecting the wabi-sabi philosophy.',
+    description: '负责海外欧卡风格游戏素材绘制，参与美术资源（icon、button）设计，丰富资源库，并匹配主题方向。并主导欧卡风格IP Lora模型训练，解决特征保持与泛化问题，将场景图绘制效率提升75%，验证了AI在美术管线中的提效能力。',
     year: '2024',
     role: 'UI Designer',
     client: 'Amber Moblie'
@@ -131,11 +131,11 @@ export const PROJECTS: Project[] = [
   {
     id: 'p3',
     title: 'Photographs',
-    category: '摄影作品',
+    category: 'Photographs',
     group: 'creative',
     thumbnailUrl: '/images/projects/p3-thumbnail.webp',
     images: ['/images/projects/p3-0.webp', '/images/projects/p3-1.webp'],
-    description: 'Rebranding for a heritage tea shop in Kyoto. We utilized textured paper stocks and embossing to create a tactile brand experience.',
+    description: '观察并记录生活',
     year: 'Every year',
     role: 'Life Observer',
     client: 'Myself'
