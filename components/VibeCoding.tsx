@@ -107,7 +107,7 @@ export const VibeCoding: React.FC<VibeCodingProps> = ({ onProjectClick, onHover,
           {/* Left Side: Title & Description */}
           <div>
              <h2 className="font-serif text-4xl md:text-5xl text-stone-800 mb-4">
-              Vibe Coding Studio
+              Vibe Coding Studio - loading...
              </h2>
              <p className="font-sans text-stone-500 max-w-md">
                 这里是我的数字创作实验室。记录那些灵光一现的想法和深夜的代码实验，探索技术与美学的边界。

@@ -29,7 +29,7 @@ export const VIBE_ITEMS: VibeItem[] = [
     thumbnailUrl: '/images/projects/p9-project-1.webp',
     year: '2023',
     type: 'link',
-    link: 'https://codepen.io',
+    link: '#',
     description: 'Processing / p5.js experiments'
   },
   {
